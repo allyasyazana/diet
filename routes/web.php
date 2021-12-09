@@ -52,3 +52,5 @@ Route::delete('/dieticians/{dietician}', 'DieticianController@destroy')->name('d
 Route::resource('meals','MealController');
 
 Route::resource('patients','PatientController');
+
+Route::resource('tracks','TrackMealController');

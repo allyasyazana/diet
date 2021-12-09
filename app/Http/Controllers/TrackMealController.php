@@ -2,11 +2,11 @@
 
 namespace App\Http\Controllers;
 
-use App\Patient;
+use App\TrackMeal;
 use Illuminate\Http\Request;
 use App\User;
 
-class PatientController extends Controller
+class TrackMealController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,8 +15,7 @@ class PatientController extends Controller
      */
     public function index()
     {
-        $patients = User::all();
-        return view('patients.index',compact('patients'));
+        return view('tracks.index');
     }
 
     /**
@@ -43,21 +42,21 @@ class PatientController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Patient  $patient
+     * @param  \App\TrackMeal  $trackMeal
      * @return \Illuminate\Http\Response
      */
-    public function show(Patient $patient)
+    public function show(TrackMeal $trackMeal)
     {
-        
+        //
     }
 
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Patient  $patient
+     * @param  \App\TrackMeal  $trackMeal
      * @return \Illuminate\Http\Response
      */
-    public function edit(Patient $patient)
+    public function edit(TrackMeal $trackMeal)
     {
         //
     }
@@ -66,10 +65,10 @@ class PatientController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Patient  $patient
+     * @param  \App\TrackMeal  $trackMeal
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Patient $patient)
+    public function update(Request $request, TrackMeal $trackMeal)
     {
         //
     }
@@ -77,14 +76,11 @@ class PatientController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Patient  $patient
+     * @param  \App\TrackMeal  $trackMeal
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Patient $patient)
+    public function destroy(TrackMeal $trackMeal)
     {
-        $patient->delete();
-
-        return redirect()->route('patients.table')
-        ->with('success','Patient deleted successfully');
+        //
     }
 }

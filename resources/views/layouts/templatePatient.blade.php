@@ -91,7 +91,7 @@
             </a>
           </li>  
           <li class="nav-item">
-                <a href="{{route('patients.track') }}" class="nav-link">
+                <a href="{{route('tracks.index') }}" class="nav-link">
                   <i class="fas fa-utensils nav-icon"></i>
                   <p>Track Meal</p>
                 </a>
