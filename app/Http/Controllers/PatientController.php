@@ -82,6 +82,9 @@ class PatientController extends Controller
      */
     public function destroy(Patient $patient)
     {
-        //
+        $patient->delete();
+
+        return redirect()->route('patients.table')
+        ->with('success','Patient deleted successfully');
     }
 }
