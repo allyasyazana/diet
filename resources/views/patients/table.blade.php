@@ -8,7 +8,7 @@
                 <!--<a class="btn btn-success" href="{{ route('dieticians.create') }}"> Add New Dietican</a><p>-->
             </div>
         </div>
-    </div>
+</div>
    
     @if ($message = Session::get('success'))
         <div class="alert alert-success">
