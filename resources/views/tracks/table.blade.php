@@ -32,6 +32,9 @@
   @foreach ($meals as $s)
   <option value="1">{{ $s->name }}  ({{ $s->calorie }} calories)</option>
   @endforeach
-</select><p><p>
-  
+</select><p><p> 
+
+<div class="col-xs-12 col-sm-12 col-md-12 text-center">
+              <button type="submit" class="btn btn-primary">Submit</button>
+</div>
 @endsection
