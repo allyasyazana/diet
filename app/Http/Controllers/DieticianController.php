@@ -89,6 +89,9 @@ class DieticianController extends Controller
      */
     public function destroy(Dietician $dietician)
     {
-        //
+        $dietician->delete();
+
+        return redirect()->route('dieticians.table')
+        ->with('success','Patient deleted successfully');
     }
 }

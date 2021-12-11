@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use App\TrackMeal;
 use Illuminate\Http\Request;
-use App\User;
+use App\Meal;
 
 class TrackMealController extends Controller
 {
@@ -15,7 +15,8 @@ class TrackMealController extends Controller
      */
     public function index()
     {
-        return view('tracks.index');
+        $meals = Meal::all();
+        return view('tracks.index', compact('meals'));
     }
 
     /**
