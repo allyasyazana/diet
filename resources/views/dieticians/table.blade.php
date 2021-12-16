@@ -89,12 +89,12 @@
                     @foreach ($dieticians as $s) @endforeach
                     <form action="{{ route('dieticians.destroy',$s->id) }}" method="POST">                           
 
-                            <a class="btn btn-primary" href="{{ route('dieticians.edit',$s->id) }}">Edit</a>
+                            <center><a class="btn btn-primary" href="{{ route('dieticians.edit',$s->id) }}">Edit</a>
 
                             @csrf
                             @method('DELETE')
 
-                            <button type="submit" class="btn btn-danger">Delete</button>
+                            <button type="submit" class="btn btn-danger">Delete</button></center>
                     </form>
                     </div>
                   </div>

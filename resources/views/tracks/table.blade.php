@@ -34,6 +34,24 @@
   @endforeach
 </select><p><p> 
 
+<html>
+        <style>
+            th {
+                padding-top: 12px;
+                padding-bottom: 12px;
+                text-align: left;
+                background-color: #053C73;
+                color: white;
+                }
+        </style>
+    
+    <table class="table table-bordered">
+        <tr>
+        <p><p><th>Total calories for today  :</th>
+        </tr>
+    </table>
+</html>
+
 <div class="col-xs-12 col-sm-12 col-md-12 text-center">
               <button type="submit" class="btn btn-primary">Submit</button>
 </div>

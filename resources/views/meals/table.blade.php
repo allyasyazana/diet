@@ -15,6 +15,17 @@
             <p>{{ $message }}</p>
         </div>
     @endif
+
+    <html>
+        <style>
+            th {
+                padding-top: 12px;
+                padding-bottom: 12px;
+                text-align: left;
+                background-color: #0A7825;
+                color: white;
+                }
+        </style>
    
     <table class="table table-bordered">
         <tr>
