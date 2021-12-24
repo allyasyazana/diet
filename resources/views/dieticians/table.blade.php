@@ -68,15 +68,6 @@
                   <hr>
                   <div class="row">
                     <div class="col-sm-3">
-                      <h6 class="mb-0">Mobile</h6>
-                    </div>
-                    <div class="col-sm-9 text-secondary">
-                      -
-                    </div>
-                  </div>
-                  <hr>
-                  <div class="row">
-                    <div class="col-sm-3">
                       <h6 class="mb-0">Address</h6>
                     </div>
                     <div class="col-sm-9 text-secondary">
@@ -84,20 +75,24 @@
                     </div>
                   </div>
                   <hr>
+                  @foreach ($dieticians as $s) 
+                  @endforeach 
                   <div class="row">
                     <div class="col-sm-12">
-                    @foreach ($dieticians as $s) @endforeach
+                  
                     <form action="{{ route('dieticians.destroy',$s->id) }}" method="POST">                           
 
                             <center><a class="btn btn-primary" href="{{ route('dieticians.edit',$s->id) }}">Edit</a>
-
+                
                             @csrf
                             @method('DELETE')
 
                             <button type="submit" class="btn btn-danger">Delete</button></center>
                     </form>
+                  
                     </div>
                   </div>
+                  
                 </div>
               </div>
             </div>

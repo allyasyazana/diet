@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Dietician;
 use Illuminate\Http\Request;
 use App\User;
+use DB;
 
 class DieticianController extends Controller
 {
@@ -64,9 +65,10 @@ class DieticianController extends Controller
      * @param  \App\Dietician  $dietician
      * @return \Illuminate\Http\Response
      */
-    public function edit(Dietician $dietician)
+    public function edit(User $dietician)
     {
-        //
+        //$dieticians = User::all();
+        return view('dieticians.edit',compact('dietician'));
     }
 
     /**
@@ -76,9 +78,21 @@ class DieticianController extends Controller
      * @param  \App\Dietician  $dietician
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Dietician $dietician)
+    public function update(Request $request, User $dietician)
     {
-        //
+        $request->validate([
+            'name' => 'required',
+            'email' => 'required',
+            //'password' => 'required',
+        ]);
+       
+        DB::table('users')->where('id',$request->id)->update([
+            'name' => $request->name,
+            'email' => $request->email,
+        ]);
+  
+        return redirect()->route('dieticians.index')
+                        ->with('success','Dietician updated successfully');
     }
 
     /**
@@ -87,11 +101,11 @@ class DieticianController extends Controller
      * @param  \App\Dietician  $dietician
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Dietician $dietician)
+    public function destroy(User $dietician)
     {
         $dietician->delete();
 
         return redirect()->route('dieticians.table')
-        ->with('success','Patient deleted successfully');
+        ->with('success','Dietician deleted successfully');
     }
 }
