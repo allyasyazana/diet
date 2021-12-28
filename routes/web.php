@@ -35,6 +35,8 @@ Route::resource('patients','PatientController');
 
 Route::resource('tracks','TrackMealController');
 
+Route::resource('appointments','AppointmentController');
+
 //Route::get('/patients', 'PatientController@index')->name('patients.index');
 
 //create dietician

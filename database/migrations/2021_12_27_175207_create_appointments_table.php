@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class AlterAddAddressColumnInUsersTable extends Migration
+class CreateAppointmentsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,8 +13,12 @@ class AlterAddAddressColumnInUsersTable extends Migration
      */
     public function up()
     {
-        Schema::table('users', function (Blueprint $table) {
-            $table->string('address');
+        Schema::create('appointments', function (Blueprint $table) {
+            $table->increments('id');
+            $table->string('name');
+            $table->string('date');
+            $table->string('time');
+            $table->timestamps();
         });
     }
 
@@ -25,8 +29,6 @@ class AlterAddAddressColumnInUsersTable extends Migration
      */
     public function down()
     {
-        Schema::table('users', function (Blueprint $table) {
-            //
-        });
+        Schema::dropIfExists('appointments');
     }
 }

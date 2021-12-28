@@ -65,15 +65,7 @@
                       -
                     </div>
                   </div>
-                  <hr>
-                  <div class="row">
-                    <div class="col-sm-3">
-                      <h6 class="mb-0">Mobile</h6>
-                    </div>
-                    <div class="col-sm-9 text-secondary">
-                      -
-                    </div>
-                  </div>
+                
                   <hr>
                   <div class="row">
                     <div class="col-sm-3">
@@ -89,7 +81,7 @@
                     @foreach ($patients as $s) @endforeach
                     <form action="{{ route('patients.destroy',$s->id) }}" method="POST">                           
 
-                            <a class="btn btn-primary" href="{{ route('patients.edit',$s->id) }}">Edit</a>
+                            <center><a class="btn btn-primary" href="{{ route('patients.edit',$s->id) }}">Edit</a>
 
                             @csrf
                             @method('DELETE')
