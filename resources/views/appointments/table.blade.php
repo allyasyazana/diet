@@ -38,7 +38,7 @@
         @foreach ($appointments as $s)
         <tr>
             <td>{{ $s->id }}</td>
-            <td>{{ $s->name }}</td>
+            <td>{{ $s->patient_id }}</td>
             <td>{{ $s->date}}</td>
             <td>{{ $s->time}}</td>
             

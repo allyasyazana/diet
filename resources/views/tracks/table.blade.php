@@ -1,23 +1,3 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-  <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.13.4/jquery.mask.min.js"></script>
-</head>
-<style>
-         th {
-              padding-top: 12px;
-              padding-bottom: 12px;
-              text-align: left;
-              background-color: #053C73;
-              color: white;
-            }
-</style>
-<body>
 @section('content')
 <div class="row">
         <div class="col-lg-12 margin-tb">
@@ -25,73 +5,59 @@
                 <h2>Track Meals</h2>
             </div>
             <div class="pull-right">
-                <!--<a class="btn btn-success" href="{{ route('dieticians.create') }}"> Add New Dietican</a><p>-->
+            <a class="btn btn-success" href="{{ route('tracks.create') }}"> Tracks Your Meals</a><p>
             </div>
         </div>
-</div><p><p>
 
-<form action="" method="POST">
-    @csrf
-      <strong>Breakfast  :</strong>
-      <select class="custom-select">
-        <option selected disabled>Select meal</option>
-        @foreach ($meals as $s)
-        <option value="{{ $s->calorie }}" id="calorie1" onkeyup="cal();">{{ $s->name }}  ({{ $s->calorie }} calories)</option>
+        @if ($message = Session::get('success'))
+        <div class="alert alert-success">
+            <p>{{ $message }}</p>
+        </div>
+    @endif
+
+    <html>
+        <style>
+            th {
+                padding-top: 12px;
+                padding-bottom: 12px;
+                text-align: left;
+                background-color: #0A7825;
+                color: white;
+                }
+        </style>
+   
+    <table class="table table-bordered">
+        <tr>
+            <th>No</th>
+            <th>Breakfast</th>
+            <th>Lunch</th>
+            <th>Dinner</th>
+            <th>Total Calories</th>
+            <th width="280px">Action</th>
+        </tr>
+        @foreach ($tracks as $s)
+        <tr>
+            <td>{{ $s->id }}</td>
+            <td>{{ $s->meal_id }}</td>
+            <td>{{ $s->meal_id }}</td>
+            <td>{{ $s->meal_id }}</td>
+            <td>{{ $s->calories }}</td>
+            <td><img src="{{ asset('uploads/' . $s->image) }}" width="100px;" height="100px;" alt="image"></td>
+            <td>
+                <form action="{{ route('tracks.destroy',$s->id) }}" method="POST">
+   
+                    <a class="btn btn-info" href="{{ route('tracks.show',$s->id) }}">Show</a>
+    
+                    <a class="btn btn-primary" href="{{ route('tracks.edit',$s->id) }}">Edit</a>
+   
+                    @csrf
+                    @method('DELETE')
+      
+                    <button type="submit" class="btn btn-danger">Delete</button>
+                </form>
+            </td>
+        </tr>
         @endforeach
-      </select><p><p>
+    </table>
 
-      <strong>Lunch  :</strong>
-      <select class="custom-select">
-        <option selected disabled>Select meal</option>
-        @foreach ($meals as $s)
-        <option value="{{ $s->calorie }}" id="calorie2" onkeyup="cal();">{{ $s->name }}  ({{ $s->calorie }} calories)</option>
-        @endforeach
-      </select><p><p>
-
-      <strong>Dinner  :</strong>
-      <select class="custom-select">
-        <option selected disbled>Select meal</option>
-        @foreach ($meals as $s)
-        <option value="{{ $s->calorie }}" id="calorie3" onkeyup="cal();">{{ $s->name }}  ({{ $s->calorie }} calories)</option>
-        @endforeach
-      </select><p><p> 
-          
-          <!--<table class="table table-bordered">
-              <tr>
-              <p><p><th readonly id="total">Total calories for today  :</th>
-              </tr>
-          </table>-->
-
-          <div class="row">
-            <div class="col-md-8">
-              <label clsss="control-label col-md-2">Total calories for today:</label>
-              <div class="col-md-4">
-                <input type="text" class="form-control input-sm text-right" readonly id="total">
-              </div>
-            </div>
-          </div>
-
-         </body>
-
-         <script type="text/javascript">
-          $(function (){
-
-            var x, y, z, d;
-
-            x=document.getElementById('calorie1').value;
-            y=document.getElementById('calorie2').value;
-            z=document.getElementById('calorie3').value;
-            
-            d=x+y+z;
-            document.getElementById('total').value=d;
-
-          });
-          </script>
-      </html>
-
-      <div class="col-xs-12 col-sm-12 col-md-12 text-center">
-                    <button type="submit" class="btn btn-primary">Submit</button>
-      </div>
-
-</form>
 @endsection

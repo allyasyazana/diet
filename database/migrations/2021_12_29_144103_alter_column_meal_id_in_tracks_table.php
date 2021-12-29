@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateAppointmentsTable extends Migration
+class AlterColumnMealIdInTracksTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,13 +13,8 @@ class CreateAppointmentsTable extends Migration
      */
     public function up()
     {
-        Schema::create('appointments', function (Blueprint $table) {
-            $table->increments('id');
-            $table->string('name');
-            $table->string('date');
-            $table->string('time');
-
-            $table->timestamps();
+        Schema::table('tracks', function (Blueprint $table) {
+            $table->foreign('id')->references('id')->on('meals');
         });
     }
 
@@ -30,6 +25,8 @@ class CreateAppointmentsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('appointments');
+        Schema::table('tracks', function (Blueprint $table) {
+            //
+        });
     }
 }

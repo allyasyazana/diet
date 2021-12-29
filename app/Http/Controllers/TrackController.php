@@ -2,11 +2,11 @@
 
 namespace App\Http\Controllers;
 
-use App\TrackMeal;
+use App\Track;
 use Illuminate\Http\Request;
 use App\Meal;
 
-class TrackMealController extends Controller
+class TrackController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,8 +15,10 @@ class TrackMealController extends Controller
      */
     public function index()
     {
-        $meals = Meal::all();
-        return view('tracks.index', compact('meals'));
+        //$meals = Meal::all();
+       //return view('tracks.index', compact('meals'));
+        $tracks = Track::all();
+        return view('tracks.index', compact('tracks'));
     }
 
     /**
@@ -26,7 +28,9 @@ class TrackMealController extends Controller
      */
     public function create()
     {
-        //
+        $meals = Meal::pluck('name', 'id');
+
+        return view('tracks.create', compact('meals'));
     }
 
     /**

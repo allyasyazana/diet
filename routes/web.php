@@ -33,7 +33,7 @@ Route::resource('meals','MealController');
 
 Route::resource('patients','PatientController');
 
-Route::resource('tracks','TrackMealController');
+Route::resource('tracks','TrackController');
 
 Route::resource('appointments','AppointmentController');
 
