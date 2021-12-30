@@ -44,8 +44,6 @@
             
             <td>
                 <form action="{{ route('appointments.destroy',$s->id) }}" method="POST">
-   
-                    <a class="btn btn-info" href="{{ route('appointments.show',$s->id) }}">Show</a>
     
                     <a class="btn btn-primary" href="{{ route('appointments.edit',$s->id) }}">Edit</a>
    

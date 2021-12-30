@@ -43,7 +43,16 @@ class AppointmentController extends Controller
      */
     public function store(Request $request)
     {
-        
+        Appointment::create([
+    		'patient_id' => auth()->user()->id,
+    		'patient_id' => $request->patient_id,
+            'date' => $request->date,
+    		'time' => $request->time,
+           
+    	]);
+
+        return redirect()->route('appointments.index')
+                        ->with('success','Appointment created successfully.');
     }
 
     /**
@@ -65,7 +74,9 @@ class AppointmentController extends Controller
      */
     public function edit(Appointment $appointment)
     {
-        //
+        $users = User::pluck('name', 'id');
+
+        return view('appointments.edit', compact('users','appointment'));
     }
 
     /**

@@ -14,7 +14,7 @@ class AlterColumnPatientIdInAppointmentsTable extends Migration
     public function up()
     {
         Schema::table('appointments', function (Blueprint $table) {
-            $table->foreign('id')->references('id')->on('users');
+            $table->foreign('patient_id')->references('id')->on('users');
         });
     }
 
