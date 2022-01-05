@@ -34,6 +34,18 @@
                 @endforeach
             </select><p><p> 
         </div>
+
+        <div class="col-xs-6 col-sm-6 col-md-12">
+        <strong>Patient Name  :</strong>
+            <select class="custom-select" name="patient_name">
+                <option selected disabled>Select patient name</option>
+                @foreach ($users as $id => $name)
+                    <option
+                        value="{{$name}}" {{ (isset($appointment['patient_name']) && $appointment['patient_name'] == $name) ? ' selected' : '' }}>{{$name}}</option>
+                @endforeach
+            </select><p><p> 
+        </div>
+
         <div class="col-xs-6 col-sm-6 col-md-12">
             <div class="form-group">
                 <strong>Date:</strong>
