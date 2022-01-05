@@ -1,4 +1,4 @@
-@extends('layouts.template')
+@extends('layouts.templatePatient')
 @section('content')
 <div class="row">
         <div class="col-lg-12 margin-tb">
@@ -13,36 +13,36 @@
 
 <form action="{{ route('tracks.store') }}" method="POST">
     @csrf
+      
       <strong>Breakfast  :</strong>
-      <select class="custom-select">
+      <select class="custom-select" name="breakfast">
         <option selected disabled>Select meal</option>
-            @foreach ($meals as $id => $name)
+            @foreach ($meals as $id => $name )
                     <option
-                        value="{{$id}}" {{ (isset($tracks['meal_id']) && $tracks['meal_id'] == $id) ? ' selected' : '' }}>{{$name}}</option>
+                        value="{{$name}}" {{ (isset($tracks['breakfast']) && $tracks['breakfast'] == $name) ? ' selected' : '' }}>{{$name}}</option>
                 @endforeach
       </select><p><p>
 
-      <strong>Lunch  :</strong>
-      <select class="custom-select">
+      <strong>Lunch :</strong>
+      <select class="custom-select" name="lunch">
         <option selected disabled>Select meal</option>
-        @foreach ($meals as $id => $name )
+            @foreach ($meals as $id => $name )
                     <option
-                        value="{{$id}}" {{ (isset($tracks['meal_id']) && $tracks['meal_id'] == $id) ? ' selected' : '' }}>{{$name}} calories</option>
+                        value="{{$name}}" {{ (isset($tracks['lunch']) && $tracks['lunch'] == $name) ? ' selected' : '' }}>{{$name}}</option>
                 @endforeach
       </select><p><p>
 
-      <strong>Dinner  :</strong>
-      <select class="custom-select">
-        <option selected disbled>Select meal</option>
-        @foreach ($meals as $id => $name )
+      <strong>Dinner :</strong>
+      <select class="custom-select" name="dinner">
+        <option selected disabled>Select meal</option>
+            @foreach ($meals as $id => $name )
                     <option
-                        value="{{$id}}" {{ (isset($tracks['meal_id']) && $tracks['meal_id'] == $id) ? ' selected' : '' }}>{{$name}} calories</option>
+                        value="{{$name}}" {{ (isset($tracks['dinner']) && $tracks['dinner'] == $name) ? ' selected' : '' }}>{{$name}}</option>
                 @endforeach
-      </select><p><p> 
-          
+      </select><p><p>
           <!--<table class="table table-bordered">
               <tr>
-              <p><p><th readonly id="total">Total calories for today  :</th>
+              <p><p><th readonly id="total">Total calories for today  readonly id="total":</th>
               </tr>
           </table>-->
 
@@ -50,28 +50,12 @@
             <div class="col-md-8">
               <label clsss="control-label col-md-2">Total calories for today:</label>
               <div class="col-md-4">
-                <input type="text" class="form-control input-sm text-right" readonly id="total">
+                <input type="text" class="form-control input-sm text-right" name="total">
               </div>
             </div>
           </div>
 
          </body>
-
-         <script type="text/javascript">
-          $(function (){
-
-            var x, y, z, d;
-
-            x=document.getElementById('calorie1').value;
-            y=document.getElementById('calorie2').value;
-            z=document.getElementById('calorie3').value;
-            
-            d=x+y+z;
-            document.getElementById('total').value=d;
-
-          });
-          </script>
-      </html>
 
       <div class="col-xs-12 col-sm-12 col-md-12 text-center">
 

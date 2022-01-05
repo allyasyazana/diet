@@ -15,11 +15,8 @@ class CreateTracksTable extends Migration
     {
         Schema::create('tracks', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('breakfast');
-            $table->string('lunch');
-            $table->string('dinner');
+            $table->unsignedInteger('meal_id');
             $table->unsignedInteger('calories')->nullable();
-            $table->string('meal_id');
             $table->timestamps();
         });
     }

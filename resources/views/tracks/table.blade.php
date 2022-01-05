@@ -38,15 +38,12 @@
         @foreach ($tracks as $s)
         <tr>
             <td>{{ $s->id }}</td>
-            <td>{{ $s->meal_id }}</td>
-            <td>{{ $s->meal_id }}</td>
-            <td>{{ $s->meal_id }}</td>
-            <td>{{ $s->calories }}</td>
-            <td><img src="{{ asset('uploads/' . $s->image) }}" width="100px;" height="100px;" alt="image"></td>
+            <td>{{ $s->breakfast}}</td>
+            <td>{{ $s->lunch }}</td>
+            <td>{{ $s->dinner }}</td>
+            <td>{{ $s->total }}</td>
             <td>
                 <form action="{{ route('tracks.destroy',$s->id) }}" method="POST">
-   
-                    <a class="btn btn-info" href="{{ route('tracks.show',$s->id) }}">Show</a>
     
                     <a class="btn btn-primary" href="{{ route('tracks.edit',$s->id) }}">Edit</a>
    

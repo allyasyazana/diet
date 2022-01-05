@@ -9,6 +9,6 @@ class Track extends Model
     public $table="tracks";
 
     protected $fillable = [
-        'breakfast','lunch','dinner','calories','meal_id',
+        'breakfast','lunch','dinner','total',
     ];
 }

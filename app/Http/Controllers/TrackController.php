@@ -41,7 +41,16 @@ class TrackController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        Track::create([
+    		//'patient_id' => auth()->user()->id,
+            'breakfast' => $request->breakfast,
+            'lunch' => $request->lunch,
+            'dinner' => $request->dinner,
+            'total'=> $request->total,           
+    	]);
+
+        return redirect()->route('tracks.index')
+                        ->with('success','Track meal success.');
     }
 
     /**
@@ -61,9 +70,11 @@ class TrackController extends Controller
      * @param  \App\TrackMeal  $trackMeal
      * @return \Illuminate\Http\Response
      */
-    public function edit(TrackMeal $trackMeal)
+    public function edit(Track $track)
     {
-        //
+        $meals = Meal::pluck('name', 'id');
+
+        return view('tracks.edit', compact('meals','track'));
     }
 
     /**
@@ -84,8 +95,11 @@ class TrackController extends Controller
      * @param  \App\TrackMeal  $trackMeal
      * @return \Illuminate\Http\Response
      */
-    public function destroy(TrackMeal $trackMeal)
+    public function destroy(Track $track)
     {
-        //
+        $track->delete();
+
+        return redirect()->route('tracks.index')
+        ->with('success','Track meal deleted successfully');
     }
 }
