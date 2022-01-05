@@ -27,10 +27,10 @@
         <div class="col-xs-6 col-sm-6 col-md-12">
         <strong>Patient Name  :</strong>
             <select class="custom-select" name="patient_id">
-                <option selected disbled>Select patient name</option>
+                <option selected disabled>Select patient name</option>
                 @foreach ($users as $id => $name)
                     <option
-                        value="{{$id}}" {{ (isset($appointments['patient_id']) && $appointments['patient_id'] == $id) ? ' selected' : '' }}>{{$name}}</option>
+                        value="{{$id}}" {{ (isset($appointment['patient_id']) && $appointment['patient_id'] == $id) ? ' selected' : '' }}>{{$name}}</option>
                 @endforeach
             </select><p><p> 
         </div>

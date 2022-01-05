@@ -88,7 +88,10 @@ class AppointmentController extends Controller
      */
     public function update(Request $request, Appointment $appointment)
     {
-        //
+        $appointment->update($request->all());
+
+        return redirect()->route('appointments.index')
+                        ->with('success','Patient appointment updated successfully');
     }
 
     /**
@@ -99,6 +102,9 @@ class AppointmentController extends Controller
      */
     public function destroy(Appointment $appointment)
     {
-        //
+        $appointment->delete();
+
+        return redirect()->route('appointments.index')
+        ->with('success','Patient appointments deleted successfully');
     }
 }
