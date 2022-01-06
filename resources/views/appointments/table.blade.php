@@ -29,16 +29,16 @@
    
     <table class="table table-bordered">
         <tr>
-            <th>No</th>
             <th>Patient Name</th>
-            <th>Date</th>
-            <th>Time</th>
+            <th>Patient Id</th>
+            <th>Appointment Date</th>
+            <th>Appointment Time</th>
             <th width="280px">Action</th>
         </tr>
         @foreach ($appointments as $s)
         <tr>
-            <td>{{ $s->id }}</td>
             <td>{{ $s->patient_name }}</td>
+            <td>{{ $s->user_id }}</td>
             <td>{{ $s->date}}</td>
             <td>{{ $s->time}}</td>
             

@@ -2,7 +2,7 @@
 <div class="row">
         <div class="col-lg-12 margin-tb">
             <div class="pull-left">
-                <h2>List of Appointment</h2>
+                <h2>Your Appointment</h2>
             </div>
         </div>
     </div>
@@ -26,30 +26,17 @@
    
     <table class="table table-bordered">
         <tr>
-            <th>No</th>
             <th>Patient Name</th>
             <th>Date</th>
             <th>Time</th>
-            <th width="280px">Action</th>
+
         </tr>
         @foreach ($appointments as $s)
         <tr>
-            <td>{{ $s->id }}</td>
             <td>{{ $s->patient_name }}</td>
             <td>{{ $s->date}}</td>
             <td>{{ $s->time}}</td>
-            
-            <td>
-                <form action="{{ route('appointments.destroy',$s->id) }}" method="POST">
-    
-                    <a class="btn btn-primary" href="{{ route('appointments.edit',$s->id) }}">Edit</a>
-   
-                    @csrf
-                    @method('DELETE')
-      
-                    <button type="submit" class="btn btn-danger">Delete</button>
-                </form>
-            </td>
+
         </tr>
         @endforeach
     </table>

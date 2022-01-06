@@ -48,6 +48,7 @@ class AppointmentController extends Controller
             'patient_name' => $request->patient_name,
             'date' => $request->date,
     		'time' => $request->time,
+            'user_id' => $request->user_id,
            
     	]);
 

@@ -47,6 +47,17 @@
                 <input type="Time" class="form-control" name="time">
             </div>
         </div>
+
+        <div class="col-xs-6 col-sm-6 col-md-12">
+        <strong>Patient Name  :</strong>
+            <select class="custom-select" name="user_id">
+                <option selected disabled>Select patient name</option>
+                @foreach ($users as $id => $name)
+                    <option
+                        value="{{$id}}" {{ (isset($appointment['user_id']) && $appointment['user_id'] == $id) ? ' selected' : '' }}>{{$name}}</option>
+                @endforeach
+            </select><p><p> 
+        </div>
         
         <p>
         <div class="col-xs-12 col-sm-12 col-md-12 text-center"><p>

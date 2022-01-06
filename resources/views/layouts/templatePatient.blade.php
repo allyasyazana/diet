@@ -82,7 +82,7 @@
             </a>
           </li>
           <li class="nav-item">
-            <a href="{{route('appointments.index') }}" class="nav-link">
+            <a href="{{route('appointmentpatients.index') }}" class="nav-link">
               <i class="far fa-calendar nav-icon"></i>
               <p>Appointment</p> 
             </a>
