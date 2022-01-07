@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Patient;
 use Illuminate\Http\Request;
 use App\User;
+use Illuminate\Support\Facades\Auth;
 
 class PatientController extends Controller
 {
@@ -13,6 +14,12 @@ class PatientController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+
     public function index()
     {
         $patients = User::all();
@@ -57,9 +64,10 @@ class PatientController extends Controller
      * @param  \App\Patient  $patient
      * @return \Illuminate\Http\Response
      */
-    public function edit(Patient $patient)
+    public function edit(User $patient)
     {
-        //
+        //$patient = User::all();
+        return view('patients.edit',compact('patient'));
     }
 
     /**
@@ -69,9 +77,17 @@ class PatientController extends Controller
      * @param  \App\Patient  $patient
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Patient $patient)
+    public function update(Request $request, User $patient)
     {
-        //
+        $user_id = Auth::user()->id;
+        $user = User::findOrFail($user_id);
+        $user->name = $request->input('name');
+        $user->email = $request->input('email');
+
+        $user->update();
+
+        return redirect()->route('patients.index')
+                        ->with('success','Profile updated successfully');
     }
 
     /**
@@ -80,7 +96,7 @@ class PatientController extends Controller
      * @param  \App\Patient  $patient
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Patient $patient)
+    public function destroy(User $patient)
     {
         $patient->delete();
 

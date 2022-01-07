@@ -19,10 +19,20 @@ Route::get('/', function () {
 
 Auth::routes();
 
+//Route::group(['middleware' => ['auth','is_patient']], function(){
 
-Route::get('/home', 'HomeController@index')->name('home');
+    Route::get('/home', 'HomeController@index')->name('home');
 
-Route::get('patient/home', 'HomeController@patientHome')->name('patient.home')->middleware('is_patient');
+    Route::get('patient/home', 'HomeController@patientHome')->name('patient.home')->middleware('is_patient');
+
+    //Route::get('/patients', 'PatientController@index')->name('patients.index');
+
+    //Route::get('/patients/{patient/edit}', 'PatientController@edit')->name('patients.edit');
+//});
+
+//Route::get('/home', 'HomeController@index')->name('home');
+
+//Route::get('patient/home', 'HomeController@patientHome')->name('patient.home')->middleware('is_patient');
 
 //index dietician
 Route::get('/dieticians', 'DieticianController@index')->name('dieticians.index');
@@ -32,6 +42,8 @@ Route::resource('dieticians','DieticianController');
 Route::resource('meals','MealController');
 
 Route::resource('patients','PatientController');
+
+//Route::get('/patients/{patient/edit}', 'PatientController@edit')->name('patients.edit');
 
 Route::resource('tracks','TrackController');
 

@@ -75,10 +75,11 @@
                       -
                     </div>
                   </div>
-                  <hr>
+                  <hr> 
+                  @foreach ($patients as $s) @endforeach
                   <div class="row">
                     <div class="col-sm-12">
-                    @foreach ($patients as $s) @endforeach
+                   
                     <form action="{{ route('patients.destroy',$s->id) }}" method="POST">                           
 
                             <center><a class="btn btn-primary" href="{{ route('patients.edit',$s->id) }}">Edit</a>

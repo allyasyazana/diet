@@ -1,4 +1,4 @@
-@extends('layouts.template')
+@extends('layouts.templatePatient')
 @section('content')
     <div class="row">
         <div class="col-lg-12 margin-tb">
@@ -19,7 +19,7 @@
         </div>
     @endif
   
-    <form action="{{ route('dieticians.update', Auth::user()->id) }}" method="POST">
+    <form action="{{ route('patients.update', Auth::user()->id) }}" method="POST">
         @csrf
         @method('PUT')
    
@@ -38,7 +38,7 @@
             </div>
             <div class="col-xs-12 col-sm-12 col-md-12 text-center">
               <button type="submit" class="btn btn-primary">Submit</button>
-                <a class="btn btn-primary" href="{{ route('dieticians.index') }}"> Back</a>
+                <a class="btn btn-primary" href="{{ route('patients.index') }}"> Back</a>
             </div>
         </div>
    

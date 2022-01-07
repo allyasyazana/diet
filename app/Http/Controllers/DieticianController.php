@@ -5,7 +5,8 @@ namespace App\Http\Controllers;
 use App\Dietician;
 use Illuminate\Http\Request;
 use App\User;
-use DB;
+//use DB;
+use Illuminate\Support\Facades\Auth;
 
 class DieticianController extends Controller
 {
@@ -80,19 +81,15 @@ class DieticianController extends Controller
      */
     public function update(Request $request, User $dietician)
     {
-        $request->validate([
-            'name' => 'required',
-            'email' => 'required',
-            //'password' => 'required',
-        ]);
-       
-        DB::table('users')->where('id',$request->id)->update([
-            'name' => $request->name,
-            'email' => $request->email,
-        ]);
-  
+        $user_id = Auth::user()->id;
+        $user = User::findOrFail($user_id);
+        $user->name = $request->input('name');
+        $user->email = $request->input('email');
+
+        $user->update();
+
         return redirect()->route('dieticians.index')
-                        ->with('success','Dietician updated successfully');
+                        ->with('success','Profile updated successfully');
     }
 
     /**
