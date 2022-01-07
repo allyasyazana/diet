@@ -28,8 +28,6 @@
                     <img src="https://bootdey.com/img/Content/avatar/avatar7.png" alt="Admin" class="rounded-circle" width="150">
                     <div class="mt-3">
                       <h4>{{ Auth::user()->name }}</h4>
-                      <p class="text-secondary mb-1">-</p>
-                      <p class="text-muted font-size-sm">-</p>
                     </div>
                   </div>
                 </div>
@@ -62,7 +60,7 @@
                       <h6 class="mb-0">Phone</h6>
                     </div>
                     <div class="col-sm-9 text-secondary">
-                      -
+                    {{ Auth::user()->phone }}
                     </div>
                   </div>
                 
@@ -72,7 +70,7 @@
                       <h6 class="mb-0">Address</h6>
                     </div>
                     <div class="col-sm-9 text-secondary">
-                      -
+                    {{ Auth::user()->address }}
                     </div>
                   </div>
                   <hr> 

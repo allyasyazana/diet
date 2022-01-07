@@ -36,6 +36,18 @@
                     <input type="text" class="form-control" name="email" value="{{ Auth::user()->email }}" placeholder="Email"></input>
                 </div>
             </div>
+            <div class="col-xs-12 col-sm-12 col-md-12">
+                <div class="form-group">
+                    <strong>Phone:</strong>
+                    <input type="text" class="form-control" name="phone" value="{{ Auth::user()->phone }}" placeholder="Phone"></input>
+                </div>
+            </div>
+            <div class="col-xs-12 col-sm-12 col-md-12">
+                <div class="form-group">
+                    <strong>Address:</strong>
+                    <input type="text" class="form-control" name="address" value="{{ Auth::user()->address }}" placeholder="Address"></input>
+                </div>
+            </div>
             <div class="col-xs-12 col-sm-12 col-md-12 text-center">
               <button type="submit" class="btn btn-primary">Submit</button>
                 <a class="btn btn-primary" href="{{ route('dieticians.index') }}"> Back</a>

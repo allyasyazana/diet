@@ -85,6 +85,8 @@ class DieticianController extends Controller
         $user = User::findOrFail($user_id);
         $user->name = $request->input('name');
         $user->email = $request->input('email');
+        $user->phone = $request->input('phone');
+        $user->address = $request->input('address');
 
         $user->update();
 
