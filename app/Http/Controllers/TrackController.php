@@ -17,7 +17,9 @@ class TrackController extends Controller
     {
         //$meals = Meal::all();
        //return view('tracks.index', compact('meals'));
-        $tracks = Track::all();
+        //$tracks = Track::all();
+        $tracks = Track::with('meal','meal2','meal3')
+        ->get();
         return view('tracks.index', compact('tracks'));
     }
 
@@ -50,7 +52,7 @@ class TrackController extends Controller
     	]);
 
         return redirect()->route('tracks.index')
-                        ->with('success','Track meal success.');
+                        ->with('success','Track meal successfully.');
     }
 
     /**

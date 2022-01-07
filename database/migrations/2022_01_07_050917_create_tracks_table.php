@@ -15,8 +15,20 @@ class CreateTracksTable extends Migration
     {
         Schema::create('tracks', function (Blueprint $table) {
             $table->increments('id');
+            $table->unsignedInteger('user_id');
+            $table->foreign('user_id')->references('id')->on('users');
+
             $table->unsignedInteger('meal_id');
-            $table->unsignedInteger('calories')->nullable();
+            $table->foreign('meal_id')->references('id')->on('meals');
+
+            $table->unsignedInteger('meal_id2');
+            $table->foreign('meal_id2')->references('id')->on('meals');
+
+            $table->unsignedInteger('meal_id3');
+            $table->foreign('meal_id3')->references('id')->on('meals');
+
+            $table->unsignedInteger('total'); 
+
             $table->timestamps();
         });
     }
