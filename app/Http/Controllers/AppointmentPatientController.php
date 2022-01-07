@@ -13,12 +13,14 @@ class AppointmentPatientController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Appointment $appointments)
     {
-        $appointments = Appointment::all();
-        return view('appointmentpatients.index', compact('appointments'));
-
+        //$appointments = Appointment::all();
+        //return view('appointmentpatients.index', compact('appointments'));
         
+        $appointments = Appointment::with('user')
+        ->get();
+        return view('appointmentpatients.index', compact('appointments'));
     }
 
     /**

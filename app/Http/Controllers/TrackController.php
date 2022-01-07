@@ -28,7 +28,7 @@ class TrackController extends Controller
      */
     public function create()
     {
-        $meals = Meal::pluck('name', 'id');
+        $meals = Meal::pluck('name','id');
 
         return view('tracks.create', compact('meals'));
     }
@@ -42,10 +42,10 @@ class TrackController extends Controller
     public function store(Request $request)
     {
         Track::create([
-    		//'patient_id' => auth()->user()->id,
-            'breakfast' => $request->breakfast,
-            'lunch' => $request->lunch,
-            'dinner' => $request->dinner,
+    		'user_id' => auth()->user()->id,
+            'meal_id' => $request->meal_id,
+            'meal_id2' => $request->meal_id2,
+            'meal_id3' => $request->meal_id3,
             'total'=> $request->total,           
     	]);
 

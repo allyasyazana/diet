@@ -38,9 +38,9 @@
         @foreach ($tracks as $s)
         <tr>
             <td>{{ $s->id }}</td>
-            <td>{{ $s->breakfast}}</td>
-            <td>{{ $s->lunch }}</td>
-            <td>{{ $s->dinner }}</td>
+            <td>{{ $s->meal_id }}</td>
+            <td>{{ $s->meal_id2 }}</td>
+            <td>{{ $s->meal_id3 }}</td>
             <td>{{ $s->total }}</td>
             <td>
                 <form action="{{ route('tracks.destroy',$s->id) }}" method="POST">

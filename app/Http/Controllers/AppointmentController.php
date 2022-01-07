@@ -14,11 +14,13 @@ class AppointmentController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Appointment $appointments)
     {
         //$appointments = Appointment::with('patients');
         //$patients = User::all();
-        $appointments = Appointment::all();
+        //$appointments = Appointment::all();
+        $appointments = Appointment::with('user')
+        ->get();
         return view('appointments.index', compact('appointments'));
     }
 
@@ -44,7 +46,7 @@ class AppointmentController extends Controller
     public function store(Request $request)
     {
         Appointment::create([
-    		'patient_id' => auth()->user()->id,
+    		//'user_id' => auth()->user()->id,
             'patient_name' => $request->patient_name,
             'date' => $request->date,
     		'time' => $request->time,

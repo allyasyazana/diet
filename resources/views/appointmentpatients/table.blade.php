@@ -23,17 +23,17 @@
                 color: white;
                 }
         </style>
-   
+ 
     <table class="table table-bordered">
         <tr>
             <th>Patient Name</th>
-            <th>Date</th>
-            <th>Time</th>
+            <th>Appointment Date</th>
+            <th>Appointment Time</th>
 
         </tr>
         @foreach ($appointments as $s)
         <tr>
-            <td>{{ $s->patient_name }}</td>
+            <td>{{ $s->user->name}}</td>
             <td>{{ $s->date}}</td>
             <td>{{ $s->time}}</td>
 

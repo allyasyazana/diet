@@ -15,29 +15,29 @@
     @csrf
       
       <strong>Breakfast  :</strong>
-      <select class="custom-select" name="breakfast">
+      <select class="custom-select" name="meal_id">
         <option selected disabled>Select meal</option>
             @foreach ($meals as $id => $name )
                     <option
-                        value="{{$name}}" {{ (isset($tracks['breakfast']) && $tracks['breakfast'] == $name) ? ' selected' : '' }}>{{$name}}</option>
+                        value="{{$id}}" {{ (isset($tracks['meal_id']) && $tracks['meal_id'] == $id) ? ' selected' : '' }}>{{$name}}</option>
                 @endforeach
       </select><p><p>
 
       <strong>Lunch :</strong>
-      <select class="custom-select" name="lunch">
+      <select class="custom-select" name="meal_id2">
         <option selected disabled>Select meal</option>
             @foreach ($meals as $id => $name )
                     <option
-                        value="{{$name}}" {{ (isset($tracks['lunch']) && $tracks['lunch'] == $name) ? ' selected' : '' }}>{{$name}}</option>
+                        value="{{$id}}" {{ (isset($tracks['meal_id2']) && $tracks['meal_id2'] == $id) ? ' selected' : '' }}>{{$name}}</option>
                 @endforeach
       </select><p><p>
 
       <strong>Dinner :</strong>
-      <select class="custom-select" name="dinner">
+      <select class="custom-select" name="meal_id3">
         <option selected disabled>Select meal</option>
             @foreach ($meals as $id => $name )
                     <option
-                        value="{{$name}}" {{ (isset($tracks['dinner']) && $tracks['dinner'] == $name) ? ' selected' : '' }}>{{$name}}</option>
+                        value="{{$id}}" {{ (isset($tracks['meal_id3']) && $tracks['meal_id3'] == $id) ? ' selected' : '' }}>{{$name}}</option>
                 @endforeach
       </select><p><p>
           <!--<table class="table table-bordered">
