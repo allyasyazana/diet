@@ -22,6 +22,7 @@ class AppointmentController extends Controller
         //$patients = User::all();
         //$appointments = Appointment::all();
         $appointments = Appointment::with('user','day','time')
+        ->where('user_id', auth()->user()->id)
         ->get();
         return view('appointments.index', compact('appointments'));
     }
@@ -78,9 +79,10 @@ class AppointmentController extends Controller
      */
     public function edit(Appointment $appointment)
     {
-        $users = User::pluck('name', 'id');
+        $days = Day::pluck('name', 'id');
+        $times = Time::pluck('name', 'id');
 
-        return view('appointments.edit', compact('users','appointment'));
+        return view('appointments.edit', compact('days','times','appointment'));
     }
 
     /**

@@ -38,7 +38,7 @@
         <div class="col-xs-6 col-sm-6 col-md-12">
         <strong>Time  :</strong>
             <select class="custom-select" name="time_id">
-                <option selected disabled>Select Day</option>
+                <option selected disabled>Select Time</option>
                 @foreach ($times as $id => $name)
                     <option
                         value="{{$id}}" {{ (isset($appointment['time_id']) && $appointment['time_id'] == $id) ? ' selected' : '' }}>{{$name}}</option>

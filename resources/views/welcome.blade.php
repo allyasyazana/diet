@@ -13,6 +13,11 @@
         <style>
             html, body {
                 background-color: #fff;
+                background-image: url("/uploads/mee_goreng.jpg");
+                background-repeat: no-repeat;
+                background-attachment: fixed;
+                background-size: 100% 100%;
+                opacity: 1.00;
                 color: #636b6f;
                 font-family: 'Nunito', sans-serif;
                 font-weight: 200;
@@ -80,9 +85,9 @@
             @endif
 
             <div class="content">
-                <div class="title m-b-md">
+                <b style="color:black"><div class="title m-b-md">
                     MyDiet Plan 
-                </div>
+                </b></div>
             </div>
         </div>
     </body>

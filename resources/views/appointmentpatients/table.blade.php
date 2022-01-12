@@ -34,8 +34,8 @@
         @foreach ($appointments as $s)
         <tr>
             <td>{{ $s->user->name}}</td>
-            <td>{{ $s->date}}</td>
-            <td>{{ $s->time}}</td>
+            <td>{{ $s->day->name}}</td>
+            <td>{{ $s->time->name}}</td>
 
         </tr>
         @endforeach
