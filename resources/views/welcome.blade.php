@@ -13,7 +13,6 @@
         <style>
             html, body {
                 background-color: #fff;
-                background-image: url("/uploads/mee_goreng.jpg");
                 background-repeat: no-repeat;
                 background-attachment: fixed;
                 background-size: 100% 100%;

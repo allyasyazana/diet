@@ -21,7 +21,7 @@ class AppointmentController extends Controller
         //$appointments = Appointment::with('patients');
         //$patients = User::all();
         //$appointments = Appointment::all();
-        $appointments = Appointment::with('user','day','time')
+        $appointments = Appointment::with('user','time')
         ->where('user_id', auth()->user()->id)
         ->get();
         return view('appointments.index', compact('appointments'));
@@ -34,11 +34,11 @@ class AppointmentController extends Controller
      */
     public function create()
     {
-        $days = Day::pluck('name', 'id');
+        //$days = Day::pluck('name', 'id');
         $times = Time::pluck('name', 'id');
         
 
-        return view('appointments.create', compact('days','times'));
+        return view('appointments.create', compact('times'));
     }
 
     /**
@@ -51,7 +51,7 @@ class AppointmentController extends Controller
     {
         Appointment::create([
     		'user_id' => auth()->user()->id,
-            'day_id' => $request->day_id,
+            'date' => $request->date,
             'time_id' => $request->time_id,
            
     	]);

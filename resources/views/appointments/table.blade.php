@@ -40,7 +40,7 @@
         <tr>
            
             <td>{{ $s->user->name}}</td>
-            <td>{{ $s->day->name}}</td>
+            <td>{{ $s->date}}</td>
             <td>{{ $s->time->name}}</td>
             
             <td>

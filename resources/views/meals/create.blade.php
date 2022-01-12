@@ -26,8 +26,8 @@
      <div class="row">
         <div class="col-xs-6 col-sm-6 col-md-12">
             <div class="form-group">
-                <strong>Name:</strong>
-                <input type="text" name="name" class="form-control" placeholder="Name">
+                <strong>Meal Name:</strong>
+                <input type="text" name="name" class="form-control" placeholder="Meal Name">
             </div>
         </div>
         <div class="col-xs-6 col-sm-6 col-md-12">
