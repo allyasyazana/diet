@@ -29,8 +29,8 @@
     
     <table class="table table-bordered">
         <tr>
+            
             <th>Patient Name</th>
-            <th>Patient Id</th>
             <th>Appointment Date</th>
             <th>Appointment Time</th>
             <th width="280px">Action</th>
@@ -38,10 +38,10 @@
         
         @foreach ($appointments as $s)
         <tr>
-            <td>{{ $s->patient_name }}</td>
+           
             <td>{{ $s->user->name}}</td>
-            <td>{{ $s->date}}</td>
-            <td>{{ $s->time}}</td>
+            <td>{{ $s->day->name}}</td>
+            <td>{{ $s->time->name}}</td>
             
             <td>
                 <form action="{{ route('appointments.destroy',$s->id) }}" method="POST">

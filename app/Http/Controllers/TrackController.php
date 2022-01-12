@@ -19,6 +19,7 @@ class TrackController extends Controller
        //return view('tracks.index', compact('meals'));
         //$tracks = Track::all();
         $tracks = Track::with('meal','meal2','meal3')
+        ->where('user_id', auth()->user()->id)
         ->get();
         return view('tracks.index', compact('tracks'));
     }

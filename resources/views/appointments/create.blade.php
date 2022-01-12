@@ -1,4 +1,4 @@
-@extends('layouts.template')
+@extends('layouts.templatePatient')
 @section('content')
 <div class="row">
     <div class="col-lg-12 margin-tb">
@@ -25,36 +25,23 @@
   
      <div class="row">
         <div class="col-xs-6 col-sm-6 col-md-12">
-        <strong>Patient Name  :</strong>
-            <select class="custom-select" name="patient_name">
-                <option selected disabled>Select patient name</option>
-                @foreach ($users as $id => $name)
+        <strong>Day  :</strong>
+            <select class="custom-select" name="day_id">
+                <option selected disabled>Select Day</option>
+                @foreach ($days as $id => $name)
                     <option
-                        value="{{$name}}" {{ (isset($appointment['patient_name']) && $appointment['patient_name'] == $name) ? ' selected' : '' }}>{{$name}}</option>
+                        value="{{$id}}" {{ (isset($appointment['day_id']) && $appointment['day_id'] == $id) ? ' selected' : '' }}>{{$name}}</option>
                 @endforeach
             </select><p><p> 
         </div>
 
         <div class="col-xs-6 col-sm-6 col-md-12">
-            <div class="form-group">
-                <strong>Date:</strong>
-                <input type="Date" class="form-control" name="date">
-            </div>
-        </div>
-        <div class="col-xs-6 col-sm-6 col-md-12">
-            <div class="form-group">
-                <strong>Time:</strong>
-                <input type="Time" class="form-control" name="time">
-            </div>
-        </div>
-
-        <div class="col-xs-6 col-sm-6 col-md-12">
-        <strong>Patient Name  :</strong>
-            <select class="custom-select" name="user_id">
-                <option selected disabled>Select patient name</option>
-                @foreach ($users as $id => $name)
+        <strong>Time  :</strong>
+            <select class="custom-select" name="time_id">
+                <option selected disabled>Select Day</option>
+                @foreach ($times as $id => $name)
                     <option
-                        value="{{$id}}" {{ (isset($appointment['user_id']) && $appointment['user_id'] == $id) ? ' selected' : '' }}>{{$name}}</option>
+                        value="{{$id}}" {{ (isset($appointment['time_id']) && $appointment['time_id'] == $id) ? ' selected' : '' }}>{{$name}}</option>
                 @endforeach
             </select><p><p> 
         </div>

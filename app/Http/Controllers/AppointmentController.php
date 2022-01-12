@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use App\Appointment;
 use Illuminate\Http\Request;
 use App\User;
+use App\Day;
+use App\Time;
 
 
 class AppointmentController extends Controller
@@ -14,12 +16,12 @@ class AppointmentController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index(Appointment $appointments)
+    public function index()
     {
         //$appointments = Appointment::with('patients');
         //$patients = User::all();
         //$appointments = Appointment::all();
-        $appointments = Appointment::with('user')
+        $appointments = Appointment::with('user','day','time')
         ->get();
         return view('appointments.index', compact('appointments'));
     }
@@ -31,10 +33,11 @@ class AppointmentController extends Controller
      */
     public function create()
     {
-        $users = User::pluck('name', 'id');
+        $days = Day::pluck('name', 'id');
+        $times = Time::pluck('name', 'id');
         
 
-        return view('appointments.create', compact('users'));
+        return view('appointments.create', compact('days','times'));
     }
 
     /**
@@ -46,11 +49,9 @@ class AppointmentController extends Controller
     public function store(Request $request)
     {
         Appointment::create([
-    		//'user_id' => auth()->user()->id,
-            'patient_name' => $request->patient_name,
-            'date' => $request->date,
-    		'time' => $request->time,
-            'user_id' => $request->user_id,
+    		'user_id' => auth()->user()->id,
+            'day_id' => $request->day_id,
+            'time_id' => $request->time_id,
            
     	]);
 

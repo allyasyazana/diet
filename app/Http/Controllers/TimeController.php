@@ -2,13 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\AppointmentPatient;
+use App\Time;
 use Illuminate\Http\Request;
-use App\Appointment;
-use App\User;
-use Illuminate\Support\Facades\Auth;
 
-class AppointmentPatientController extends Controller
+class TimeController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -17,13 +14,7 @@ class AppointmentPatientController extends Controller
      */
     public function index()
     {
-        //$users = Auth::user();
-        $appointments = Appointment::with('user')
-        ->where('user_id', auth()->user()->id)
-        ->get();
-        //$appointments = Appointment::where('user_id', $users->id)
-        //->get();
-        return view('appointmentpatients.index', compact('appointments'));
+        //
     }
 
     /**
@@ -50,10 +41,10 @@ class AppointmentPatientController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\AppointmentPatient  $appointmentPatient
+     * @param  \App\Time  $time
      * @return \Illuminate\Http\Response
      */
-    public function show(AppointmentPatient $appointmentPatient)
+    public function show(Time $time)
     {
         //
     }
@@ -61,10 +52,10 @@ class AppointmentPatientController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\AppointmentPatient  $appointmentPatient
+     * @param  \App\Time  $time
      * @return \Illuminate\Http\Response
      */
-    public function edit(AppointmentPatient $appointmentPatient)
+    public function edit(Time $time)
     {
         //
     }
@@ -73,10 +64,10 @@ class AppointmentPatientController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\AppointmentPatient  $appointmentPatient
+     * @param  \App\Time  $time
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, AppointmentPatient $appointmentPatient)
+    public function update(Request $request, Time $time)
     {
         //
     }
@@ -84,10 +75,10 @@ class AppointmentPatientController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\AppointmentPatient  $appointmentPatient
+     * @param  \App\Time  $time
      * @return \Illuminate\Http\Response
      */
-    public function destroy(AppointmentPatient $appointmentPatient)
+    public function destroy(Time $time)
     {
         //
     }

@@ -102,7 +102,7 @@ class PatientController extends Controller
     {
         $patient->delete();
 
-        return redirect()->route('patients.table')
+        return redirect()->route('logout')
         ->with('success','Patient deleted successfully');
     }
 }
