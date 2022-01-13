@@ -29,7 +29,7 @@
         <div class="col-xs-6 col-sm-6 col-md-12">
             <div class="form-group">
                 <strong>Date:</strong>
-                <input type="Date" class="form-control" name="date" value="{{ $appointment->name }}" placeholder="Date">
+                <input type="Date" class="form-control" name="date" value="{{ $appointment->date }}" placeholder="Date">
             </div>
         </div>
 

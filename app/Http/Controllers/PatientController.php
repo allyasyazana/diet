@@ -85,6 +85,7 @@ class PatientController extends Controller
         $user->email = $request->input('email');
         $user->phone = $request->input('phone');
         $user->address = $request->input('address');
+        $user->image = $request->input('image');
 
         $user->update();
 

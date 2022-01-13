@@ -39,8 +39,7 @@
         
         <div class="col-xs-6 col-sm-6 col-md-12">
         <strong>Image:</strong>
-            <div class="custom-file">
-                
+            <div class="custom-file">          
                 <input type="file" class="custom-file-input" name="image">       
                 <label class="custom-file-label">Choose image file</label>
             </div>

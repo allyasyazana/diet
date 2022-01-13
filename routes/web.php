@@ -51,6 +51,8 @@ Route::resource('appointments','AppointmentController');
 
 Route::resource('appointmentpatients','AppointmentPatientController');
 
+Route::resource('mealpatients','MealPatientController');
+
 //Route::get('/patients', 'PatientController@index')->name('patients.index');
 
 //create dietician

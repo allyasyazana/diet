@@ -48,8 +48,15 @@
                     <input type="text" class="form-control" name="address" value="{{ Auth::user()->address }}" placeholder="Address"></input>
                 </div>
             </div>
+            <div class="col-xs-6 col-sm-6 col-md-12">
+            <strong>Profile Image:</strong>
+                <div class="custom-file">          
+                    <input type="file" class="custom-file-input" name="image">       
+                    <label class="custom-file-label">Choose image file</label>
+                </div>
+            </div><p><p>
             <div class="col-xs-12 col-sm-12 col-md-12 text-center">
-              <button type="submit" class="btn btn-primary">Submit</button>
+              <p><p><button type="submit" class="btn btn-primary">Submit</button>
                 <a class="btn btn-primary" href="{{ route('dieticians.index') }}"> Back</a>
             </div>
         </div>

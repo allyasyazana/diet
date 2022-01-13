@@ -33,7 +33,7 @@
             <div class="col-xs-12 col-sm-12 col-md-12">
                 <div class="form-group">
                     <strong>Total Calories:</strong>
-                    <input type="text" class="form-control" name="calorie" value="{{ $meal->calorie }}" placeholder="Rotal Calories"></input>
+                    <input type="text" class="form-control" name="calorie" value="{{ $meal->calorie }}" placeholder="Total Calories"></input>
                 </div>
             </div>
             <div class="col-xs-12 col-sm-12 col-md-12 text-center">

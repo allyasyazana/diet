@@ -2,7 +2,7 @@
 <div class="row">
         <div class="col-lg-12 margin-tb">
             <div class="pull-left">
-                <h2>Patients Appointment</h2>
+                <h2>Patients Appointment</h2><p><p>
             </div>
         </div>
     </div>
@@ -33,9 +33,9 @@
         </tr>
         @foreach ($appointments as $s)
         <tr>
-            <td>{{ $s->user->name}}</td>
+            <b><td>{{ $s->user->name}}</td>
             <td>{{ $s->date}}</td>
-            <td>{{ $s->time->name}}</td>
+            <td>{{ $s->time->name}}</td></b>
 
         </tr>
         @endforeach
