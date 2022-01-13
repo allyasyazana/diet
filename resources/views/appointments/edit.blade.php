@@ -26,14 +26,11 @@
 
         <div class="row">
         <div class="col-xs-6 col-sm-6 col-md-12">
-        <strong>Day  :</strong>
-            <select class="custom-select" name="day_id">
-                <option selected disabled>Select Day</option>
-                @foreach ($days as $id => $name)
-                    <option
-                        value="{{$id}}" {{ (isset($appointment['day_id']) && $appointment['day_id'] == $id) ? ' selected' : '' }}>{{$name}}</option>
-                @endforeach
-            </select><p><p> 
+        <div class="col-xs-6 col-sm-6 col-md-12">
+            <div class="form-group">
+                <strong>Date:</strong>
+                <input type="Date" class="form-control" name="date" value="{{ $appointment->name }}" placeholder="Date">
+            </div>
         </div>
 
         <div class="col-xs-6 col-sm-6 col-md-6">

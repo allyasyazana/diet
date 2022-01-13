@@ -2,7 +2,7 @@
 <div class="row">
         <div class="col-lg-12 margin-tb">
             <div class="pull-left">
-                <h2>Your Appointment</h2>
+                <h2>Patients Appointment</h2>
             </div>
         </div>
     </div>
@@ -34,7 +34,7 @@
         @foreach ($appointments as $s)
         <tr>
             <td>{{ $s->user->name}}</td>
-            <td>{{ $s->day->name}}</td>
+            <td>{{ $s->date}}</td>
             <td>{{ $s->time->name}}</td>
 
         </tr>

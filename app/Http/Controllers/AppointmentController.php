@@ -79,10 +79,10 @@ class AppointmentController extends Controller
      */
     public function edit(Appointment $appointment)
     {
-        $days = Day::pluck('name', 'id');
+        //$days = Day::pluck('name', 'id');
         $times = Time::pluck('name', 'id');
 
-        return view('appointments.edit', compact('days','times','appointment'));
+        return view('appointments.edit', compact('times','appointment'));
     }
 
     /**
