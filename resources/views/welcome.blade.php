@@ -1,93 +1,76 @@
 <!DOCTYPE html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-        <title>MyDiet Plan</title>
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
-        <!-- Fonts -->
-        <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
+  <meta name="copyright" content="MACode ID, https://macodeid.com/">
 
-        <!-- Styles -->
-        <style>
-            html, body {
-                background-color: #fff;
-                background-repeat: no-repeat;
-                background-attachment: fixed;
-                background-size: 100% 100%;
-                opacity: 1.00;
-                color: #636b6f;
-                font-family: 'Nunito', sans-serif;
-                font-weight: 200;
-                height: 100vh;
-                margin: 0;
-            }
+  <title>MeTAS</title>
 
-            .full-height {
-                height: 100vh;
-            }
+  <link rel="stylesheet" href="{{ asset('admin/css/maicons.css') }}">
 
-            .flex-center {
-                align-items: center;
-                display: flex;
-                justify-content: center;
-            }
+  <link rel="stylesheet" href="{{ asset('admin/css/bootstrap.css') }}">
 
-            .position-ref {
-                position: relative;
-            }
+  <link rel="stylesheet" href="{{ asset('admin/vendor/owl-carousel/css/owl.carousel.css') }}">
 
-            .top-right {
-                position: absolute;
-                right: 10px;
-                top: 18px;
-            }
+  <link rel="stylesheet" href="{{ asset('admin/vendor/animate/animate.css') }}">
 
-            .content {
-                text-align: center;
-            }
+  <link rel="stylesheet" href="{{ asset('admin/css/theme.css') }}">
+</head>
+<body>
 
-            .title {
-                font-size: 84px;
-            }
+  <!-- Back to top button -->
+  <div class="back-to-top"></div>
 
-            .links > a {
-                color: #636b6f;
-                padding: 0 25px;
-                font-size: 13px;
-                font-weight: 600;
-                letter-spacing: .1rem;
-                text-decoration: none;
-                text-transform: uppercase;
-            }
+  <header>
 
-            .m-b-md {
-                margin-bottom: 30px;
-            }
-        </style>
-    </head>
-    <body>
-        <div class="flex-center position-ref full-height">
-            @if (Route::has('login'))
-                <div class="top-right links">
-                    @auth
-                        <a href="{{ url('/home') }}">Home</a>
-                    @else
-                        <a href="{{ route('login') }}">Login</a>
+    <nav class="navbar navbar-expand-lg navbar-light shadow-sm">
+      <div class="container">
+        <a class="navbar-brand" href="#"><span class="text-primary">MyMeal Track & </span> Appointment System</a>
 
-                        @if (Route::has('register'))
-                            <a href="{{ route('register') }}">Register</a>
-                        @endif
-                    @endauth
-                </div>
+        <div class="collapse navbar-collapse" id="navbarSupport">
+        @if (Route::has('login'))
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+              <a class="btn btn-primary ml-lg-3" href="{{ route('login') }}">Login</a>
+            </li>
+            <li class="nav-item">
+            @if (Route::has('register'))
+              <a class="btn btn-primary ml-lg-3" href="{{ route('register') }}">Register</a>
             @endif
-
-            <div class="content">
-                <b style="color:black"><div class="title m-b-md">
-                    MyDiet Plan 
-                </b></div>
-            </div>
+            </li>
+            </ul>
+        @endif
         </div>
-    </body>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupport" aria-controls="navbarSupport" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+      </div> <!-- .container -->
+    </nav>
+  </header>
+
+  <div class="page-hero bg-image overlay-dark" style="background-image: url(/uploads/bg_image_1.jpg);">
+    <div class="hero-section">
+      <div class="container text-center wow zoomIn">
+        <span class="subhead">MyMeal Track & Appointment System </span>
+        <h1 class="display-4">Department of Dietary, Klinik Kesihatan Sitiawan</h1>
+      </div>
+    </div>
+  </div>
+
+<script src="{{ asset('admin/js/jquery-3.5.1.min.js') }}"></script>
+
+<script src="{{ asset('admin/js/bootstrap.bundle.min.js') }}"></script>
+
+<script src="{{ asset('admin/vendor/owl-carousel/js/owl.carousel.min.js') }}"></script>
+
+<script src="{{ asset('admin/vendor/wow/wow.min.js') }}"></script>
+
+<script src="{{ asset('admin/js/theme.js') }}"></script>
+  
+</body>
 </html>
