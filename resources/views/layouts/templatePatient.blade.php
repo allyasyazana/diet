@@ -96,9 +96,15 @@
           <li class="nav-item">
                 <a href="{{route('tracks.index') }}" class="nav-link">
                   <i class="fas fa-utensils nav-icon"></i>
-                  <p>Track Meal</p>
+                  <p>Record Meal</p>
                 </a>
-          </li>            
+          </li> 
+          <!-- <li class="nav-item">
+                <a href="{{route('records.index') }}" class="nav-link">
+                  <i class="fas fa-utensils nav-icon"></i>
+                  <p>Record Meal</p>
+                </a>
+          </li>            -->
           <li class="nav-item">
             <a href="{{ route('logout') }}"
                                        onclick="event.preventDefault();

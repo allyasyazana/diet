@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Track;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
+use Redirect,Response;
 use App\Meal;
 
 class TrackController extends Controller
