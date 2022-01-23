@@ -23,6 +23,8 @@ class AppointmentController extends Controller
         //$appointments = Appointment::all();
         $appointments = Appointment::with('user','time')
         ->where('user_id', auth()->user()->id)
+        ->orderBy('date','asc')
+        ->orderBy('time_id','asc')
         ->get();
         return view('appointments.index', compact('appointments'));
     }

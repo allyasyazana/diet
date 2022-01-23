@@ -23,7 +23,9 @@ Auth::routes();
 
     Route::get('/home', 'HomeController@index')->name('home');
 
-    Route::get('patient/home', 'HomeController@patientHome')->name('patient.home')->middleware('is_patient');
+    Route::get('/patient/home', 'HomeController@patientHome')->name('patient.home')->middleware('is_patient');
+
+    Route::get('/dietician/home', 'HomeController@dieticianHome')->name('dietician.home');
 
     //Route::get('/patients', 'PatientController@index')->name('patients.index');
 

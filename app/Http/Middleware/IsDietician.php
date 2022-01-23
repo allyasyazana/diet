@@ -4,7 +4,7 @@ namespace App\Http\Middleware;
 
 use Closure;
 
-class IsPatient
+class IsDietician
 {
     /**
      * Handle an incoming request.
@@ -15,9 +15,10 @@ class IsPatient
      */
     public function handle($request, Closure $next)
     {
-        if (auth()->User()->is_patient == 1){
+        if (auth()->User()->is_patient == 0){
             return $next($request);
         }
-        return redirect('patient.home')->with('error','You have no dietician access');
+        return redirect('dietician.home')->with('error','You have no dietician access');
     }
 }
+

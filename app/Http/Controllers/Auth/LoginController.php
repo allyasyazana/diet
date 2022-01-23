@@ -47,9 +47,10 @@ class LoginController extends Controller
         ]);
         if(auth()->attempt(array('email' => $input['email'],'password' => $input['password']))){
             if(auth()->User()->is_patient ==1){
-                return redirect()->route('patient.home');
-            }else{
                 return redirect()->route('home');
+            }
+            else if(auth()->User()->is_patient ==0){
+                return redirect()->route('dietician.home');
             }
         }else{
             return redirect()->route('login')->with('error','Input proper email or password.');

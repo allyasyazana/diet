@@ -23,13 +23,13 @@
                 color: white;
                 }
 
-            td {
+            /* td {
                 padding-top: 10px;
                 padding-bottom: 10px;
                 text-align: left;
                 background-color: #619E38;
                 color: white;
-            }    
+            }     */
         </style>
    
     <table class="table table-bordered">

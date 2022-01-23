@@ -30,4 +30,9 @@ class HomeController extends Controller
     {
         return view('patient-home');
     }
+
+    public function dieticianHome()
+    {
+        return view('dietician-home');
+    }
 }

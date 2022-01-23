@@ -1,4 +1,4 @@
-@extends('layouts.templatePatient')
+@extends('layouts.template')
 
 @section('content')
 <div class="container">
@@ -18,7 +18,7 @@
                             {{ session('error') }}
                         </div>
                         @endif
-                        Welcome to patient dashboard!
+                        Welcome to dietician dashboard!
                     {{ __('You are logged in!') }}
                 </div>
             </div>

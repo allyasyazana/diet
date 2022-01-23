@@ -23,7 +23,11 @@ class AppointmentPatientController extends Controller
         //->get();
         //$appointments = Appointment::where('user_id', $users->id)
         //->get();
-        $appointments = Appointment::all();
+        //$appointments = Appointment::all();
+        $appointments = Appointment::with('user','time')
+        ->orderBy('date','asc')
+        ->orderBy('time_id','asc')
+        ->get();
         return view('appointmentpatients.index', compact('appointments'));
     }
 
