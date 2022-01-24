@@ -29,6 +29,7 @@
             <th>Patient Name</th>
             <th>Appointment Date</th>
             <th>Appointment Time</th>
+            <!-- <th width="280px">Action</th> -->
 
         </tr>
         @foreach ($appointments as $s)
@@ -37,7 +38,13 @@
             <td>{{ $s->date}}</td>
             <td>{{ $s->time->name}}</td></b>
 
+            <!-- <td>
+                <form action="{{ route('appointmentpatients.destroy',$s->id) }}" method="POST">    
+                    <a class="btn btn-primary" href="{{ route('appointmentpatients.edit',$s->id) }}">Edit</a>
+                </form>
+            </td> -->
         </tr>
+
         @endforeach
     </table>
 @endsection

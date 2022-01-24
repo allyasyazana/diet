@@ -79,7 +79,7 @@ class AppointmentController extends Controller
      * @param  \App\Appointment  $appointment
      * @return \Illuminate\Http\Response
      */
-    public function edit(Appointment $appointment)
+    public function edit(Appointment $appointmentPatient)
     {
         //$days = Day::pluck('name', 'id');
         $times = Time::pluck('name', 'id');

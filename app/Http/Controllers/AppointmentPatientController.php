@@ -6,6 +6,7 @@ use App\AppointmentPatient;
 use Illuminate\Http\Request;
 use App\Appointment;
 use App\User;
+use App\Time;
 use Illuminate\Support\Facades\Auth;
 
 class AppointmentPatientController extends Controller
@@ -69,9 +70,11 @@ class AppointmentPatientController extends Controller
      * @param  \App\AppointmentPatient  $appointmentPatient
      * @return \Illuminate\Http\Response
      */
-    public function edit(AppointmentPatient $appointmentPatient)
+    public function edit(AppointmentPatient $appointment)
     {
-        //
+        $times = Time::pluck('name', 'id');
+
+        return view('appointmentpatients.edit', compact('times','appointment'));
     }
 
     /**
