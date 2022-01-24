@@ -10,7 +10,7 @@ class Track extends Model
     public $table="tracks";
 
     protected $fillable = [
-        'user_id','meal_id','meal_id2','meal_id3','total',
+        'user_id','date','meal_id','qty1','subT1','meal_id2','qty2','subT2','meal_id3','qty3','subT3','total',
     ];
 
     public function meal(){

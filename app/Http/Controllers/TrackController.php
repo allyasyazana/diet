@@ -33,7 +33,8 @@ class TrackController extends Controller
      */
     public function create()
     {
-        $meals = Meal::pluck('name','id');
+        // $meals = Meal::pluck('name','id','calorie');
+        $meals = Meal::all();
 
         return view('tracks.create', compact('meals'));
     }
@@ -48,14 +49,21 @@ class TrackController extends Controller
     {
         Track::create([
     		'user_id' => auth()->user()->id,
+            'date' => $request->date,
             'meal_id' => $request->meal_id,
+            'qty1' => $request->qty1,
+            'subT1' => $request->subT1,
             'meal_id2' => $request->meal_id2,
+            'qty2' => $request->qty2,
+            'subT2' => $request->subT2,
             'meal_id3' => $request->meal_id3,
+            'qty3' => $request->qty3,
+            'subT3' => $request->subT3,
             'total'=> $request->total,           
     	]);
 
         return redirect()->route('tracks.index')
-                        ->with('success','Track meal successfully.');
+                        ->with('success','Record meal successfully.');
     }
 
     /**

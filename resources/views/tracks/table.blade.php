@@ -28,7 +28,7 @@
    
     <table class="table table-bordered">
         <tr>
-            <th>No</th>
+            <th>Date</th>
             <th>Breakfast</th>
             <th>Lunch</th>
             <th>Dinner</th>
@@ -37,7 +37,7 @@
         </tr>
         @foreach ($tracks as $s)
         <tr>
-            <td>{{ $s->id }}</td>
+            <td>{{ $s->date }}</td>
             <td>{{ $s->meal->name }}</td>
             <td>{{ $s->meal2->name }}</td>
             <td>{{ $s->meal3->name }}</td>
