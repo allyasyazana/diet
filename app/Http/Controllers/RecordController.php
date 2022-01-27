@@ -17,15 +17,10 @@ class RecordController extends Controller
      */
     public function index()
     {
-        $data['meals'] = DB::table('meals')->get();
-        return view('records.index',$data);
-    }
-
-    public function getCalorie()
-    {
-       $getCalorie = $_GET['id'];
-       $calorie  = DB::table('meals')->where('id', $getCalorie)->get();
-       return Response::json($calorie);
+        //$records = Record::with('meal1','meal2','meal3')
+        $records = Record::all()
+        ->where('user_id', auth()->user()->id);
+        return view('records.index', compact('records'));
     }
 
     /**
@@ -35,7 +30,9 @@ class RecordController extends Controller
      */
     public function create()
     {
-        //
+        $meals = Meal::all();
+
+        return view('records.create', compact('meals'));
     }
 
     /**
@@ -46,7 +43,23 @@ class RecordController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        Record::create([
+    		'user_id' => auth()->user()->id,
+            'date' => $request->date,
+            'meal1' => $request->meal1,
+            'qty1' => $request->qty1,
+            'subT1' => $request->subT1,
+            'meal2' => $request->meal2,
+            'qty2' => $request->qty2,
+            'subT2' => $request->subT2,
+            'meal3' => $request->meal3,
+            'qty3' => $request->qty3,
+            'subT3' => $request->subT3,
+            'total'=> $request->total,           
+    	]);
+
+        return redirect()->route('records.index')
+                        ->with('success','Record meal successfully.');
     }
 
     /**

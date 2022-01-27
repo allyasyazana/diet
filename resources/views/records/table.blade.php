@@ -2,15 +2,14 @@
 <div class="row">
         <div class="col-lg-12 margin-tb">
             <div class="pull-left">
-                <h2>Your Appointment</h2>
+                <h2>Record Meals</h2>
             </div>
             <div class="pull-right">
-                <a class="btn btn-success" href="{{ route('appointments.create') }}"> Add New Appointment</a><p>
+            <a class="btn btn-success" href="{{ route('records.create') }}"> Record Your Meals</a><p>
             </div>
         </div>
-    </div>
-   
-    @if ($message = Session::get('success'))
+
+        @if ($message = Session::get('success'))
         <div class="alert alert-success">
             <p>{{ $message }}</p>
         </div>
@@ -26,35 +25,36 @@
                 color: white;
                 }
         </style>
-    
+   
     <table class="table table-bordered">
         <tr>
-            
-            <th>Patient Name</th>
-            <th>Appointment Date</th>
-            <th>Appointment Time</th>
+            <th>Date</th>
+            <th>Breakfast</th>
+            <th>Lunch</th>
+            <th>Dinner</th>
+            <th>Total Calories</th>
             <th width="280px">Action</th>
         </tr>
-        
-        @foreach ($appointments as $s)
+        @foreach ($records as $s)
         <tr>
-           
-            <td>{{ $s->user->name}}</td>
-            <td>{{ $s->date}}</td>
-            <td>{{ $s->time->name}}</td>
-            
+            <td>{{ $s->date }}</td>
+            <td>{{ $s->meal1 }}</td>
+            <td>{{ $s->meal2 }}</td>
+            <td>{{ $s->meal3}}</td>
+            <td>{{ $s->total }}</td>
             <td>
-                <form action="{{ route('appointments.destroy',$s->id) }}" method="POST">
+                <form action="{{ route('records.destroy',$s->id) }}" method="POST">
     
-                    <a class="btn btn-primary" href="{{ route('appointments.edit',$s->id) }}">Edit</a>
+                    <a class="btn btn-primary" href="{{ route('records.edit',$s->id) }}">Edit</a>
    
                     @csrf
                     @method('DELETE')
       
-                    <button type="submit" onclick="return confirm('Sure want to delete?')" class="btn btn-danger">Delete</button>
+                    <button type="submit" class="btn btn-danger">Delete</button>
                 </form>
             </td>
         </tr>
         @endforeach
     </table>
+
 @endsection

@@ -49,8 +49,10 @@ Route::resource('patients','PatientController');
 
 Route::resource('tracks','TrackController');
 
-Route::get('/records','RecordController@index')->name('records.index');
-Route::get('/getCalorie/{id}', 'RecordController@getCalorie');
+Route::resource('records','RecordController');
+
+//Route::get('/records','RecordController@index')->name('records.index');
+//Route::get('/getCalorie/{id}', 'RecordController@getCalorie');
 
 Route::resource('appointments','AppointmentController');
 

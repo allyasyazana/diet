@@ -11,7 +11,7 @@
         </div>
 </div><p><p>
 
-<form action="{{ route('tracks.store') }}" method="POST">
+<form action="{{ route('records.store') }}" method="POST">
     @csrf
 
     <div class="col-xs-6 col-sm-6 col-md-12">
@@ -29,14 +29,13 @@
    </tr>
       <strong>Breakfast  :</strong>
       <td style="width:40%">
-      <select class="custom-select" name="meal_id" id="meal1" onchange="calcCalorie('meal1', 'qty1', 'subT1')">
+      <select class="custom-select" name="meal1" id="meal1" onchange="calcCalorie('meal1', 'qty1', 'subT1')">
         <option selected disabled>Select meal</option>
             @foreach ($meals as $id => $name )
-              <option value="{{$name->id}}" data-calorie="{{$name->calorie}}" {{ (isset($tracks['meal_id']) && $tracks['meal_id'] == $name->id) ? ' selected' : '' }}>{{$name->name}}</option>
+              <option value="{{$name->id}}" data-calorie="{{$name->calorie}}" {{ (isset($records['meal1']) && $records['meal1'] == $name->id) ? ' selected' : '' }}>{{$name->name}}</option>
             @endforeach
-        <!-- <option selected >No meal</option> -->
+        <option selected >No meal</option>
       </select>
-      
       <p><p>
       </td>
       <td style="width:30%">
@@ -55,12 +54,11 @@
    </tr>
       <strong>Lunch  :</strong>
       <td style="width:40%">
-      <select class="custom-select" name="meal_id2" id="meal2" onchange="calcCalorie('meal2', 'qty2', 'subT2')">
+      <select class="custom-select" name="meal2" id="meal2" onchange="calcCalorie('meal2', 'qty2', 'subT2')">
         <option selected disabled>Select meal</option>
-            @foreach ($meals as $id => $name )
-                    <option
-                        value="{{$name->id}}" data-calorie="{{$name->calorie}}" {{ (isset($tracks['meal_id2']) && $tracks['meal_id2'] == $name->id) ? ' selected' : '' }}>{{$name->name}}</option>
-                @endforeach
+        @foreach ($meals as $id => $name )
+              <option value="{{$name->id}}" data-calorie="{{$name->calorie}}" {{ (isset($records['meal2']) && $records['meal2'] == $name->id) ? ' selected' : '' }}>{{$name->name}}</option>
+            @endforeach
       </select><p><p>
       </td>
       <td style="width:30%">
@@ -79,12 +77,11 @@
    </tr>
       <strong>Dinner  :</strong>
       <td style="width:40%">
-      <select class="custom-select" name="meal_id3" id="meal3" onchange="calcCalorie('meal3', 'qty3', 'subT3')">
+      <select class="custom-select" name="meal3" id="meal3" onchange="calcCalorie('meal3', 'qty3', 'subT3')">
         <option selected disabled>Select meal</option>
-            @foreach ($meals as $id => $name )
-                    <option
-                        value="{{$name->id}}" data-calorie="{{$name->calorie}}" {{ (isset($tracks['meal_id3']) && $tracks['meal_id3'] == $name->id) ? ' selected' : '' }}>{{$name->name}}</option>
-                @endforeach
+        @foreach ($meals as $id => $name )
+              <option value="{{$name->id}}" data-calorie="{{$name->calorie}}" {{ (isset($records['meal3']) && $records['meal3'] == $name->id) ? ' selected' : '' }}>{{$name->name}}</option>
+            @endforeach
       </select><p><p>
       </td>
       <td style="width:30%">
@@ -94,6 +91,29 @@
           <input type="text" name="subT3" class="form-control" readonly style="cursor: pointer;" value="0" id="subT3">
        </td>
       </table>
+
+      <!-- <strong>Lunch :</strong>
+      <select class="custom-select" name="meal_id2">
+        <option selected disabled>Select meal</option>
+            @foreach ($meals as $id => $name )
+                    <option
+                        value="{{$id}}" {{ (isset($tracks['meal_id2']) && $tracks['meal_id2'] == $id) ? ' selected' : '' }}>{{$name}}</option>
+                @endforeach
+      </select><p><p>
+
+      <strong>Dinner :</strong>
+      <select class="custom-select" name="meal_id3">
+        <option selected disabled>Select meal</option>
+            @foreach ($meals as $id => $name )
+                    <option
+                        value="{{$id}}" {{ (isset($tracks['meal_id3']) && $tracks['meal_id3'] == $id) ? ' selected' : '' }}>{{$name}}</option>
+                @endforeach
+      </select><p><p> -->
+          <!--<table class="table table-bordered">
+              <tr>
+              <p><p><th readonly id="total">Total calories for today  readonly id="total":</th>
+              </tr>
+          </table>-->
 
           <div class="row">
             <div class="col-md-8">
@@ -110,7 +130,7 @@
 
           <button type="submit" class="btn btn-primary">Submit</button>
 
-           <a class="btn btn-primary" href="{{ route('tracks.index') }}"> Back</a>
+           <a class="btn btn-primary" href="{{ route('records.index') }}"> Back</a>
       </div>
       <p><p><p><p>
 
