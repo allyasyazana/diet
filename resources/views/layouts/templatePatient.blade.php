@@ -93,18 +93,24 @@
                   <p>View Meal</p>
                 </a>
           </li> 
-          <li class="nav-item">
+          <!-- <li class="nav-item">
                 <a href="{{route('tracks.index') }}" class="nav-link">
                   <i class="fas fa-utensils nav-icon"></i>
                   <p>Record Meal</p>
                 </a>
-          </li> 
+          </li>  -->
           <!-- <li class="nav-item">
                 <a href="{{route('records.index') }}" class="nav-link">
                   <i class="fas fa-utensils nav-icon"></i>
+                  <p>Recordsss Meal</p>
+                </a>
+          </li> -->
+          <li class="nav-item">
+                <a href="{{route('recordmeals.index') }}" class="nav-link">
+                  <i class="fas fa-utensils nav-icon"></i>
                   <p>Record Meal</p>
                 </a>
-          </li>            -->
+          </li>            
           <li class="nav-item">
             <a href="{{ route('logout') }}"
                                        onclick="event.preventDefault();

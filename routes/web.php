@@ -51,6 +51,8 @@ Route::resource('tracks','TrackController');
 
 Route::resource('records','RecordController');
 
+Route::resource('recordmeals','RecordMealController');
+
 //Route::get('/records','RecordController@index')->name('records.index');
 //Route::get('/getCalorie/{id}', 'RecordController@getCalorie');
 
