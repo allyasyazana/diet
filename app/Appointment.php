@@ -13,7 +13,7 @@ class Appointment extends Model
     public $table="appointments";
 
     protected $fillable = [
-        'user_id','date','time_id',
+        'user_id','date','time_id','status'
     ];
 
     public function user(){

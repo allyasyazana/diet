@@ -60,6 +60,12 @@ Route::resource('appointments','AppointmentController');
 
 Route::resource('appointmentpatients','AppointmentPatientController');
 
+Route::get('/approved/{id}', 'AppointmentPatientController@approved');
+
+Route::get('/rejected/{id}', 'AppointmentPatientController@rejected');
+
+//Route::get('/approved/{id}',[AppointmentPatientController::class,'approved']);
+
 Route::resource('mealpatients','MealPatientController');
 
 //Route::get('/patients', 'PatientController@index')->name('patients.index');

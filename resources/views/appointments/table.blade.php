@@ -33,6 +33,7 @@
             <th>Patient Name</th>
             <th>Appointment Date</th>
             <th>Appointment Time</th>
+            <th>Status</th>
             <th width="280px">Action</th>
         </tr>
         
@@ -42,6 +43,7 @@
             <td>{{ $s->user->name}}</td>
             <td>{{ $s->date}}</td>
             <td>{{ $s->time->name}}</td>
+            <td>{{ $s->status}}</td>
             
             <td>
                 <form action="{{ route('appointments.destroy',$s->id) }}" method="POST">

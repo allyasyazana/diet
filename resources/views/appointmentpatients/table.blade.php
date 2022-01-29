@@ -29,6 +29,9 @@
             <th>Patient Name</th>
             <th>Appointment Date</th>
             <th>Appointment Time</th>
+            <th>Status</th>
+            <th>Approved</th>
+            <th>Rejected</th>
             <!-- <th width="280px">Action</th> -->
 
         </tr>
@@ -37,6 +40,13 @@
             <b><td>{{ $s->user->name}}</td>
             <td>{{ $s->date}}</td>
             <td>{{ $s->time->name}}</td></b>
+            <td>{{ $s->status}}</td></b>
+            <td>
+                <a class="btn btn-success" href="{{url('approved',$s->id)}}">Approved</a>
+            </td></b>
+            <td>
+                <a class="btn btn-danger" href="{{url('rejected',$s->id)}}">Rejected</a>
+            </td></b>
 
             <!-- <td>
                 <form action="{{ route('appointmentpatients.destroy',$s->id) }}" method="POST">    

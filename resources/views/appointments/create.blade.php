@@ -42,6 +42,12 @@
                 @endforeach
             </select><p><p> 
         </div>
+
+        <div class="col-xs-6 col-sm-6 col-md-12">
+            <div class="form-group">
+                <input type="status" class="form-control" name="status" hidden value="Pending">
+            </div>
+        </div>
         
         <p>
         <div class="col-xs-12 col-sm-12 col-md-12 text-center"><p>

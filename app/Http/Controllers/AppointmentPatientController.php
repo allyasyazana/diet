@@ -32,11 +32,35 @@ class AppointmentPatientController extends Controller
         return view('appointmentpatients.index', compact('appointments'));
     }
 
+    public function approved($id)
+    {
+        $appointments = Appointment::find($id);
+
+        $appointments->status = 'Approved';
+
+        $appointments->save();
+
+        return redirect()->back();
+    }
+
+    public function rejected($id)
+    {
+        $appointments = Appointment::find($id);
+
+        $appointments->status = 'Rejected';
+
+        $appointments->save();
+
+        return redirect()->back();
+    }
+
     /**
      * Show the form for creating a new resource.
      *
      * @return \Illuminate\Http\Response
      */
+
+
     public function create()
     {
         //

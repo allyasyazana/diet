@@ -55,6 +55,7 @@ class AppointmentController extends Controller
     		'user_id' => auth()->user()->id,
             'date' => $request->date,
             'time_id' => $request->time_id,
+            'status' => $request->status,
            
     	]);
 
