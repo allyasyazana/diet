@@ -82,9 +82,9 @@ class RecordMealController extends Controller
      */
     public function edit(RecordMeal $recordMeal)
     {
-        $meals = Meal::all();
+        //$meals = Meal::all();
 
-        return view('recordmeals.edit', compact('meals','recordMeal'));
+        return view('recordmeals.edit', compact('recordMeal'));
     }
 
     /**

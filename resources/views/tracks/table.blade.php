@@ -45,7 +45,7 @@
             <td>
                 <form action="{{ route('tracks.destroy',$s->id) }}" method="POST">
     
-                    <!-- <a class="btn btn-primary" href="{{ route('tracks.edit',$s->id) }}">Edit</a> -->
+                    <a class="btn btn-primary" href="{{ route('tracks.edit',$s->id) }}">Edit</a>
    
                     @csrf
                     @method('DELETE')

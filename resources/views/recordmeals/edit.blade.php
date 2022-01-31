@@ -8,7 +8,7 @@
         </div>
 </div><p><p>
 
-
+<form action="{{ route('recordmeals.update',$recordMeal->id) }}" method="POST">
     @csrf
     @method('PUT')
 

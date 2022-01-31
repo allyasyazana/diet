@@ -42,7 +42,7 @@
         <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
       </li>
       <li class="nav-item d-none d-sm-inline-block">
-        <a href="{{route('dieticians.index') }}" class="nav-link">Home</a>
+        <a href="{{route('admins.index') }}" class="nav-link">Home</a>
       </li>
     </ul>
   </nav>
@@ -76,12 +76,12 @@
                with font-awesome or any other icon font library -->
  
           <li class="nav-item">
-            <a href="{{route('dieticians.index') }}" class="nav-link">
+            <a href="" class="nav-link">
               <i class="far fa-user-circle nav-icon"></i>
-              <p>My Profile</p> 
+              <p>List of Dietician</p> 
             </a>
           </li>
-          <li class="nav-item">
+          <!-- <li class="nav-item">
             <a href="{{route('appointmentpatients.index') }}" class="nav-link">
               <i class="far fa-calendar nav-icon"></i>
               <p>Appointment</p> 
@@ -92,7 +92,7 @@
                   <i class="fas fa-utensils nav-icon"></i>
                   <p>Meal</p>
                 </a>
-              </li>            
+              </li>             -->
 
           <li class="nav-item">
             <a href="{{ route('logout') }}"

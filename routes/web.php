@@ -27,6 +27,8 @@ Auth::routes();
 
     Route::get('/dietician/home', 'HomeController@dieticianHome')->name('dietician.home');
 
+    Route::get('/admin/home', 'HomeController@adminHome')->name('admin.home');
+
     //Route::get('/patients', 'PatientController@index')->name('patients.index');
 
     //Route::get('/patients/{patient/edit}', 'PatientController@edit')->name('patients.edit');
