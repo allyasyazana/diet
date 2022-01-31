@@ -29,7 +29,7 @@
 
     <nav class="navbar navbar-expand-lg navbar-light shadow-sm">
       <div class="container">
-        <a class="navbar-brand" href="#"><span class="text-primary">MyMeal Track & </span> Appointment System</a>
+        <a class="navbar-brand" href="#"><span class="text-primary">MyMeal Record & </span> Appointment System</a>
 
         <div class="collapse navbar-collapse" id="navbarSupport">
         @if (Route::has('login'))
@@ -56,7 +56,7 @@
   <div class="page-hero bg-image overlay-dark" style="background-image: url(/uploads/bg_image_1.jpg);">
     <div class="hero-section">
       <div class="container text-center wow zoomIn">
-        <span class="subhead">MyMeal Track & Appointment System </span>
+        <span class="subhead">MyMeal Record & Appointment System </span>
         <h1 class="display-4">Department of Dietary, Klinik Kesihatan Sitiawan</h1>
       </div>
     </div>

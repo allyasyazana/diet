@@ -5,6 +5,10 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\User;
 use App\Admin;
+use App\DB;
+use Auth;
+//use App\Http\Controllers\Auth;
+//use Illuminate\Support\Facades\Auth;
 
 class AdminController extends Controller
 {
@@ -21,10 +25,18 @@ class AdminController extends Controller
     
     public function index()
     {
-        $admins = User::all();
+        // if(Auth::user()->is_patient == '0'){
+
+        //     $admins = DB::table('users')->get();
+        //     dd($admins);
+        //     //$admins = User::all();
+        //     //return view('admins.index',compact('admins'));
+        // }
+        //$admins = User::all();
         //dd($dieticians);
-        return view('admins.index',compact('admins'));
-        //return view('admins.index');
+        // $admins = User::all();
+        // return view('admins.index',compact('admins'));
+        return view('admins.index');
     }
 
     public function create()

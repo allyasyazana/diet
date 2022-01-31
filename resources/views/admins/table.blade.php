@@ -35,11 +35,6 @@
             <th width="280px">Action</th>
         </tr>
         
-       
-        <tr>
-
-            
-
-        </tr>
+        
     </table>
 @endsection
