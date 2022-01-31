@@ -47,6 +47,10 @@ Route::resource('meals','MealController');
 
 Route::resource('patients','PatientController');
 
+Route::resource('admins','AdminController');
+
+Route::post('/adddietician', 'AdminController@adddietician');
+
 //Route::get('/patients/{patient/edit}', 'PatientController@edit')->name('patients.edit');
 
 Route::resource('tracks','TrackController');

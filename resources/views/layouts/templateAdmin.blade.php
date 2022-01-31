@@ -76,9 +76,9 @@
                with font-awesome or any other icon font library -->
  
           <li class="nav-item">
-            <a href="" class="nav-link">
+            <a href="{{route('admins.index') }}" class="nav-link">
               <i class="far fa-user-circle nav-icon"></i>
-              <p>List of Dietician</p> 
+              <p>Add New Dietician</p> 
             </a>
           </li>
           <!-- <li class="nav-item">
