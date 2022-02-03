@@ -18,9 +18,9 @@ class RecordMealController extends Controller
     public function index()
     {
         //$recordmeals = RecordMeal::with('meal1','meal2','meal3')
-        $recordmeals = RecordMeal::all()
-        ->where('user_id', auth()->user()->id);
-        //->get();
+        $recordmeals = RecordMeal::where('user_id', auth()->user()->id)
+        ->get();
+
         return view('recordmeals.index', compact('recordmeals'));
     }
 
@@ -80,11 +80,11 @@ class RecordMealController extends Controller
      * @param  \App\RecordMeal  $recordMeal
      * @return \Illuminate\Http\Response
      */
-    public function edit(RecordMeal $recordMeal)
+    public function edit(RecordMeal $recordmeal)
     {
-        //$meals = Meal::all();
+        $meals = Meal::all();
 
-        return view('recordmeals.edit', compact('recordMeal'));
+        return view('recordmeals.edit', compact('recordmeal','meals'));
     }
 
     /**
@@ -94,10 +94,16 @@ class RecordMealController extends Controller
      * @param  \App\RecordMeal  $recordMeal
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, RecordMeal $recordMeal)
-    {
-        $recordMeal->update($request->all());
+    public function update(Request $request, RecordMeal $recordmeal)
+    {        
+        // $request->validate([
+        //     'date' => 'required',
+        // ]);
 
+    
+        $recordmeal->update($request->all());
+
+        //$recordmeal->date = $request->date;
         return redirect()->route('recordmeals.index')
                         ->with('success','Record meal updated successfully');
     }

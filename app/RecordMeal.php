@@ -9,7 +9,7 @@ class RecordMeal extends Model
     public $table="recordmeals";
 
     protected $fillable = [
-        'user_id','date','meal_breakfast','qty1','subT1','meal_lunch','qty2','subT2','meal_dinner','qty3','subT3','total',
+        'id', 'user_id','date','meal_breakfast','qty1','subT1','meal_lunch','qty2','subT2','meal_dinner','qty3','subT3','total',
     ];
 
     // public function meal1(){

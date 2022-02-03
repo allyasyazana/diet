@@ -32,9 +32,15 @@
             
             <th>Dietician Name</th>
             <th>Dietician Email</th>
-            <th width="280px">Action</th>
         </tr>
         
-        
+        @foreach ($admins as $s)
+        <tr>
+           
+            <td>{{ $s->name}}</td>
+            <td>{{ $s->email}}</td>
+    
+        </tr>
+        @endforeach
     </table>
 @endsection

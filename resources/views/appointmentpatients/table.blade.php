@@ -42,10 +42,10 @@
             <td>{{ $s->time->name}}</td></b>
             <td>{{ $s->status}}</td></b>
             <td>
-                <a class="btn btn-success" href="{{url('approved',$s->id)}}">Approved</a>
+                <a class="btn btn-success" href="{{url('approved',$s->id)}}"  onclick="return confirm('Sure want to approve appointment?')">Approved</a>
             </td></b>
             <td>
-                <a class="btn btn-danger" href="{{url('rejected',$s->id)}}">Rejected</a>
+                <a class="btn btn-danger" href="{{url('rejected',$s->id)}}" onclick="return confirm('Sure want to reject appointment?')">Rejected</a>
             </td></b>
 
             <!-- <td>

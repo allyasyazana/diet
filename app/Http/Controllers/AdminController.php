@@ -34,9 +34,9 @@ class AdminController extends Controller
         // }
         //$admins = User::all();
         //dd($dieticians);
-        // $admins = User::all();
-        // return view('admins.index',compact('admins'));
-        return view('admins.index');
+        $admins = User::all();
+        return view('admins.index',compact('admins'));
+        //return view('admins.index');
     }
 
     public function create()

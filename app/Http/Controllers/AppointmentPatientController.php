@@ -47,7 +47,7 @@ class AppointmentPatientController extends Controller
     {
         $appointments = Appointment::find($id);
 
-        $appointments->status = 'Rejected';
+        $appointments->status = 'Rejected (Please choose other time slot)';
 
         $appointments->save();
 
