@@ -33,7 +33,7 @@
             <th>Lunch</th>
             <th>Dinner</th>
             <th>Total Calories</th>
-            <th width="180px">Action</th>
+            <!-- <th width="180px">Action</th> -->
         </tr>
         @foreach ($recordmeals as $s)
         <tr>
@@ -45,7 +45,7 @@
             <td>
                 <form action="{{ route('recordmeals.destroy',$s->id) }}" method="POST">
     
-                    <a class="btn btn-primary" href="{{ route('recordmeals.edit',$s->id) }}">Edit</a>
+                    <!-- <a class="btn btn-primary" href="{{ route('recordmeals.edit',$s->id) }}">Edit</a> -->
    
                     @csrf
                     @method('DELETE')

@@ -29,7 +29,6 @@
    
     <table class="table table-bordered">
         <tr>
-            <th>No</th>
             <th>Meal Name</th>
             <th>Total Calories</th>
             <th>Image</th>
@@ -37,7 +36,6 @@
         </tr>
         @foreach ($meals as $s)
         <tr>
-            <td>{{ $s->id }}</td>
             <td>{{ $s->name }}</td>
             <td>{{ $s->calorie }}</td>
             <td><img src="{{ asset('uploads/' . $s->image) }}" width="75px;" height="75px;" alt="image"></td>
@@ -51,7 +49,7 @@
                     @csrf
                     @method('DELETE')
       
-                    <button type="submit" class="btn btn-danger">Delete</button>
+                    <button type="submit" class="btn btn-danger" onclick="return confirm('Sure want to delete this meal?')">Delete</button>
                 </form>
             </td>
         </tr>

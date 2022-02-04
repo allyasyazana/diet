@@ -29,12 +29,11 @@ class AdminController extends Controller
 
         //     $admins = DB::table('users')->get();
         //     dd($admins);
-        //     //$admins = User::all();
         //     //return view('admins.index',compact('admins'));
         // }
         //$admins = User::all();
         //dd($dieticians);
-        $admins = User::all();
+        $admins = User::where('is_patient', 0)->get();
         return view('admins.index',compact('admins'));
         //return view('admins.index');
     }
