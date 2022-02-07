@@ -56,6 +56,12 @@ class RecordMealController extends Controller
             'meal_dinner' => $request->meal_dinner,
             'qty3' => $request->qty3,
             'subT3' => $request->subT3,
+            'meal_brunch' => $request->meal_brunch,
+            'qty4' => $request->qty4,
+            'subT4' => $request->subT4,
+            'meal_tea' => $request->meal_tea,
+            'qty5' => $request->qty5,
+            'subT5' => $request->subT5,
             'total'=> $request->total,           
     	]);
 

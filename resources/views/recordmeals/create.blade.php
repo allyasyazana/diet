@@ -10,6 +10,23 @@
             </div>
         </div>
 </div><p><p>
+        <style>
+            th {
+                padding-top: 12px;
+                padding-bottom: 12px;
+                text-align: left;
+                background-color: #879B63;
+                color: white;
+                }
+
+            tr:nth-child(even) {
+                background-color: #B8CE90;
+            }
+
+            tr:nth-child(odd) {
+                background-color: #8CDF8D;
+            }
+        </style>
 
 <form action="{{ route('recordmeals.store') }}" method="POST">
     @csrf
@@ -22,14 +39,40 @@
     </div>
       
     <table class="table table-responsive" width="100%">
+      <tr>
+        <th>Meal Name</th>
+        <th>Quantity</th>
+        <th>Total</th>
+      </tr>
+
+      <strong>Breakfast  :</strong>
+        <td style="width:40%">
+          <select class="custom-select" name="meal_breakfast" id="meal1" onchange="calcCalorie('meal1', 'qty1', 'subT1')">
+            <option selected disabled>Select meal</option>
+              @foreach($meals as $s )
+              <option value="{{ $s->name }}" data-calorie="{{$s->calorie}}">{{ $s->name  }}</option>
+              @endforeach
+          </select>
+          <p><p>
+        </td>
+
+      <td style="width:30%">
+          <input type="number" name="qty1" class="form-control" min="0" value="0" placeholder="Quantity" onchange="calcCalorie('meal1', 'qty1', 'subT1')" id="qty1">
+       </td> 
+       <td style="width:30%">
+          <input type="text" name="subT1" class="form-control" readonly style="cursor: pointer;" id="subT1" value="0">
+       </td>
+    </table>
+
+    <table class="table table-responsive" width="100%">
     <tr>
      <th>Meal Name</th>
      <th>Quantity</th>
      <th>Total</th>
    </tr>
-      <strong>Breakfast  :</strong>
+      <strong>Brunch :</strong>
       <td style="width:40%">
-      <select class="custom-select" name="meal_breakfast" id="meal1" onchange="calcCalorie('meal1', 'qty1', 'subT1')">
+      <select class="custom-select" name="meal_brunch" id="meal4" onchange="calcCalorie('meal4', 'qty4', 'subT4')">
         <option selected disabled>Select meal</option>
         @foreach($meals as $s )
               <option value="{{ $s->name }}" data-calorie="{{$s->calorie}}">{{ $s->name  }}</option>
@@ -40,12 +83,13 @@
       <p><p>
       </td>
       <td style="width:30%">
-          <input type="number" name="qty1" class="form-control" min="0" value="0" placeholder="Quantity" onchange="calcCalorie('meal1', 'qty1', 'subT1')" id="qty1">
+          <input type="number" name="qty4" class="form-control" min="0" value="0" placeholder="Quantity" onchange="calcCalorie('meal4', 'qty4', 'subT4')" id="qty4">
        </td> 
        <td style="width:30%">
-          <input type="text" name="subT1" class="form-control" readonly style="cursor: pointer;" id="subT1" value="0">
+          <input type="text" name="subT4" class="form-control" readonly style="cursor: pointer;" id="subT4" value="0">
        </td>
       </table>
+
 
     <table class="table table-responsive">
     <tr>
@@ -70,7 +114,36 @@
        </td>
       </table>
 
-      <table class="table table-responsive">
+    
+      <table class="table table-responsive" width="100%">
+      <tr>
+        <th>Meal Name</th>
+        <th>Quantity</th>
+        <th>Total</th>
+      </tr>
+
+      <strong>Tea :</strong>
+        <td style="width:40%">
+          <select class="custom-select" name="meal_tea" id="meal5" onchange="calcCalorie('meal5', 'qty5', 'subT5')">
+            <option selected disabled>Select meal</option>
+              @foreach($meals as $s )
+              <option value="{{ $s->name }}" data-calorie="{{$s->calorie}}">{{ $s->name  }}</option>
+              @endforeach
+          </select>
+          <p><p>
+        </td>
+
+      <td style="width:30%">
+          <input type="number" name="qty5" class="form-control" min="0" value="0" placeholder="Quantity" onchange="calcCalorie('meal5', 'qty5', 'subT5')" id="qty5">
+       </td> 
+       <td style="width:30%">
+          <input type="text" name="subT5" class="form-control" readonly style="cursor: pointer;" id="subT5" value="0">
+       </td>
+    </table>
+
+
+
+    <table class="table table-responsive">
     <tr>
      <th>Meal Name</th>
      <th>Quantity</th>
@@ -130,8 +203,10 @@
     total1 = $("#subT1").val();
     total2 = $("#subT2").val();
     total3 = $("#subT3").val();
+    total4 = $("#subT4").val();
+    total5 = $("#subT5").val();
 
-    total = parseInt(total1) + parseInt(total2) + parseInt(total3);
+    total = parseInt(total1) + parseInt(total2) + parseInt(total3) + parseInt(total4) + parseInt(total5);
     $("#total").val(total);
 
   }

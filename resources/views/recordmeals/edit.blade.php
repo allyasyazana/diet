@@ -52,11 +52,12 @@
      <th>Quantity</th>
      <th>Total</th>
    </tr>
+
       <strong>Lunch :</strong>
       <td style="width:40%">
       <select class="custom-select" name="meal_lunch" id="meal2" onchange="calcCalorie('meal2', 'qty2', 'subT2')">
         <option selected disabled>Select meal</option>
-        @foreach($meals as $s )
+          @foreach($meals as $s )
               <option value="{{ $s->name }}" selected data-calorie="{{$s->calorie}}">{{ $s->name  }}</option>
           @endforeach
 
@@ -73,6 +74,7 @@
        </td>
       </table>
 
+
     <table class="table table-responsive" width="100%">
     <tr>
      <th>Meal Name</th>
@@ -85,7 +87,7 @@
         <option selected disabled>Select meal</option>
         @foreach($meals as $s )
               <option value="{{ $s->name }}" selected data-calorie="{{$s->calorie}}">{{ $s->name  }}</option>
-          @endforeach
+        @endforeach
 
           
         <!-- <option selected >No meal</option> -->

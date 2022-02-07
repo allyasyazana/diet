@@ -24,13 +24,23 @@
                 background-color: #0A7825;
                 color: white;
                 }
+
+            /* tr:nth-child(even) {
+                background-color: #85DA86;
+            }
+
+            tr:nth-child(odd) {
+                background-color: #8CDF8D;
+            } */
         </style>
    
     <table class="table table-bordered">
         <tr>
             <th>Date</th>
             <th>Breakfast</th>
+            <th>Brunch</th>
             <th>Lunch</th>
+            <th>Tea</th>
             <th>Dinner</th>
             <th>Total Calories</th>
             <!-- <th width="180px">Action</th> -->
@@ -39,20 +49,22 @@
         <tr>
             <td>{{ $s->date }}</td>
             <td>{{ $s->meal_breakfast}}</td>
+            <td>{{ $s->meal_brunch}}</td>
             <td>{{ $s->meal_lunch}}</td>
+            <td>{{ $s->meal_tea}}</td>
             <td>{{ $s->meal_dinner }}</td>
             <td>{{ $s->total }}</td>
-            <td>
+            <!-- <td>
                 <form action="{{ route('recordmeals.destroy',$s->id) }}" method="POST">
     
-                    <!-- <a class="btn btn-primary" href="{{ route('recordmeals.edit',$s->id) }}">Edit</a> -->
+                    <a class="btn btn-primary" href="{{ route('recordmeals.edit',$s->id) }}">Edit</a> -->
    
-                    @csrf
+                    <!-- @csrf
                     @method('DELETE')
       
-                    <!-- <button type="submit" class="btn btn-danger">Delete</button> -->
-                </form>
-            </td>
+                     <button type="submit" class="btn btn-danger">Delete</button> -->
+                <!-- </form>
+            </td> --> 
         </tr>
         @endforeach
     </table>
