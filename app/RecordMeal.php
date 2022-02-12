@@ -13,6 +13,10 @@ class RecordMeal extends Model
         'qty3','subT3','meal_brunch','qty4','subT4','meal_tea','qty5','subT5','total',
     ];
 
+    public function user(){
+        return $this->belongsTo(User::class);
+    }
+
     // public function meal1(){
     //     return $this->belongsTo(Meal::class, 'meal_breakfast' );
     // }

@@ -81,18 +81,27 @@
               <p>My Profile</p> 
             </a>
           </li>
+
           <li class="nav-item">
             <a href="{{route('appointmentpatients.index') }}" class="nav-link">
               <i class="far fa-calendar nav-icon"></i>
               <p>Appointment</p> 
             </a>
           </li>  
+
           <li class="nav-item">
                 <a href="{{route('meals.index') }}" class="nav-link">
                   <i class="fas fa-utensils nav-icon"></i>
                   <p>Meal</p>
                 </a>
-              </li>            
+          </li>  
+          
+          <li class="nav-item">
+                <a href="{{route('recordmealdieticians.index') }}" class="nav-link">
+                  <i class="fas fa-utensils nav-icon"></i>
+                  <p>Patient's Record Meal</p>
+                </a>
+          </li> 
 
           <li class="nav-item">
             <a href="{{ route('logout') }}"
