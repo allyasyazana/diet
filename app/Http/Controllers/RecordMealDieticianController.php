@@ -23,15 +23,20 @@ class RecordMealDieticianController extends Controller
 
     public function search(Request $request)
     {
-        //$recordmeals = $request->get('query');
-        $search_text= isset($request->user_id) ? $request->user_id : null;
-        info($search_text);
-        //$search_text = $_GET['query'];
-        $recordmeals = RecordMeal::where('user_id','LIKE', '%'.$search_text.'%')->get();
-        info($recordmeals);
+        // //$recordmeals = $request->get('query');
+        // $search_text= isset($request->user_id) ? $request->user_id : null;
+        // info($search_text);
+        // //$search_text = $_GET['query'];
+        // $recordmeals = RecordMeal::where('user_id','LIKE', '%'.$search_text.'%')->get();
+        // info($recordmeals);
 
-        //dd($recordmeals);
+        // //dd($recordmeals);
 
-        return view('recordmealdieticians.search', compact('recordmeals'));
+        $search_text = $request->input('query');
+        $recordmeals = RecordMeal::whereHas('user', function($query) use ($search_text) {
+        $query->where('name','LIKE', '%'.$search_text.'%');
+        })->get();
+
+        return view('recordmealdieticians.index', compact('recordmeals'));
     }
 }
