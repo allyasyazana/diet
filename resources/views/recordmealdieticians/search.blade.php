@@ -6,19 +6,6 @@
             </div>
         </div>
 
-        <form action="{{ url('/search') }}" method="GET">
-            @csrf
-
-            <div class="col-xs-6 col-sm-6 col-md-12">
-                    <div class="form-group">
-                    <table>
-                        <td><input type="search" class="form-control" name="query" placeholder="Search Patient Name"></td>
-                        <td><button type="submit" class="btn btn-primary">Search</button></td>
-                    </div>
-                    </table>
-            </div>
-        </form>
-
         @if ($message = Session::get('success'))
         <div class="alert alert-success">
             <p>{{ $message }}</p>
@@ -55,18 +42,21 @@
             <th>Dinner</th>
             <th>Total Calories</th>
         </tr>
-        @foreach ($recordmeals as $s)
-        <tr>
-            <td>{{ $s->user->name}}</td>
-            <td>{{ $s->date }}</td>
-            <td>{{ $s->meal_breakfast}}</td>
-            <td>{{ $s->meal_brunch}}</td>
-            <td>{{ $s->meal_lunch}}</td>
-            <td>{{ $s->meal_tea}}</td>
-            <td>{{ $s->meal_dinner }}</td>
-            <td>{{ $s->total }}</td>
-        </tr>
-        @endforeach
+        if (is_array($recordmeals) || is_object($recordmeals))
+        {
+            @foreach ($recordmeals as $s)
+            <tr>
+                <td>{{ $s->user->name}}</td>
+                <td>{{ $s->date }}</td>
+                <td>{{ $s->meal_breakfast}}</td>
+                <td>{{ $s->meal_brunch}}</td>
+                <td>{{ $s->meal_lunch}}</td>
+                <td>{{ $s->meal_tea}}</td>
+                <td>{{ $s->meal_dinner }}</td>
+                <td>{{ $s->total }}</td>
+            </tr>
+            @endforeach
+        }
     </table>
 
 @endsection

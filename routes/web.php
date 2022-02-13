@@ -61,6 +61,8 @@ Route::resource('recordmeals','RecordMealController');
 
 Route::resource('recordmealdieticians','RecordMealDieticianController');
 
+Route::get('/search','RecordMealDieticianController@search');
+
 //Route::get('/records','RecordController@index')->name('records.index');
 //Route::get('/getCalorie/{id}', 'RecordController@getCalorie');
 

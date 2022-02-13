@@ -30,7 +30,7 @@
       <select class="custom-select" name="meal_breakfast" id="meal1" onchange="calcCalorie('meal1', 'qty1', 'subT1')">
         <option selected disabled>Select meal</option>
         @foreach($meals as $s )
-              <option value="{{ $s->name }}" selected data-calorie="{{$s->calorie}}">{{ $s->name  }}</option>
+              <option value="{{ $s->id}}" data-calorie="{{$s->calorie}}" {{$recordmeal->id == $s->id  ? 'selected' : ''}} > {{ $s->name  }}</option>
           @endforeach
 
           
