@@ -20,7 +20,7 @@
     </div>
 @endif
    
-<form action="{{ route('meals.store') }}" method="POST">
+<form action="{{ route('meals.store') }}" method="POST" enctype="multipart/form-data">
     @csrf
   
      <div class="row">
@@ -40,7 +40,7 @@
         <div class="col-xs-6 col-sm-6 col-md-12">
         <strong>Meal Image:</strong>
             <div class="custom-file">          
-                <input type="file" name="image">       
+                <input type="file" name="image" >       
                 <!-- <label>Choose image file</label> -->
             </div>
         </div>

@@ -19,7 +19,7 @@
         </div>
     @endif
   
-    <form action="{{ route('dieticians.update', Auth::user()->id) }}" method="POST">
+    <form action="{{ route('dieticians.update', Auth::user()->id) }}" method="POST" enctype="multipart/form-data">
         @csrf
         @method('PUT')
    
@@ -51,7 +51,7 @@
             <div class="col-xs-6 col-sm-6 col-md-12">
             <strong>Profile Image:</strong>
             <div class="custom-file">          
-                <input type="file" name="image">       
+                <input type="file" name="image" >       
                 <!-- <label>Choose image file</label> -->
             </div>
             </div><p><p>

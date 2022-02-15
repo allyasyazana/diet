@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use App\User;
 //use DB;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\File;
 
 class DieticianController extends Controller
 {
@@ -87,7 +88,7 @@ class DieticianController extends Controller
         $user->email = $request->input('email');
         $user->phone = $request->input('phone');
         $user->address = $request->input('address');
-        $user->image = $request->input('image');
+        //$user->image = $request->input('image');
 
         if($request->hasfile('image'))
         {

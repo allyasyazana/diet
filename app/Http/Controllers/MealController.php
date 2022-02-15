@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Meal;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\File;
 
 class MealController extends Controller
 {
@@ -47,6 +48,8 @@ class MealController extends Controller
         $meal->name = $request->input('name');
         $meal->calorie = $request->input('calorie');
         //$meal->image = $request->input('image');
+        //$meal->image = Meal::putFile('uploads/records/', $request->file('image'));
+        //$meal = $request->file('image')->store('records');
 
         if($request->hasfile('image'))
         {
