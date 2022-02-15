@@ -19,7 +19,7 @@
         </div>
     @endif
   
-    <form action="{{ route('patients.update', Auth::user()->id) }}" method="POST">
+    <form action="{{ route('patients.update', Auth::user()->id) }}" method="POST" enctype="multipart/form-data">
         @csrf
         @method('PUT')
    
@@ -51,8 +51,8 @@
             <div class="col-xs-6 col-sm-6 col-md-12">
             <strong>Profile Image:</strong>
                 <div class="custom-file">          
-                    <input type="file" class="custom-file-input" name="image">       
-                    <label class="custom-file-label">Choose image file</label>
+                    <input type="file" name="image" >       
+                    <!-- <label>Choose image file</label> -->
                 </div>
             </div><p><p>
             <div class="col-xs-12 col-sm-12 col-md-12 text-center">

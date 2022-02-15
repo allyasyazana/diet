@@ -6,6 +6,7 @@ use App\Patient;
 use Illuminate\Http\Request;
 use App\User;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\File;
 
 class PatientController extends Controller
 {
@@ -85,7 +86,21 @@ class PatientController extends Controller
         $user->email = $request->input('email');
         $user->phone = $request->input('phone');
         $user->address = $request->input('address');
-        $user->image = $request->input('image');
+        //$user->image = $request->input('image');
+
+        if($request->hasfile('image'))
+        {
+            $destination = 'uploads/records/'.$user->image;
+            if(File::exists($destination))
+            {
+                File::delete($destination);
+            }
+            $file = $request->file('image');
+            $extenstion = $file->getClientOriginalExtension();
+            $filename = time().'.'.$extenstion;
+            $file->move('uploads/records/', $filename);
+            $user->image = $filename;
+        }
 
         $user->update();
 
