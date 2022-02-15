@@ -79,7 +79,7 @@ class DieticianController extends Controller
      * @param  \App\Dietician  $dietician
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, User $dietician)
+    public function update(Request $request)
     {
         $user_id = Auth::user()->id;
         $user = User::findOrFail($user_id);
@@ -88,6 +88,20 @@ class DieticianController extends Controller
         $user->phone = $request->input('phone');
         $user->address = $request->input('address');
         $user->image = $request->input('image');
+
+        if($request->hasfile('image'))
+        {
+            $destination = 'uploads/records/'.$user->image;
+            if(File::exists($destination))
+            {
+                File::delete($destination);
+            }
+            $file = $request->file('image');
+            $extenstion = $file->getClientOriginalExtension();
+            $filename = time().'.'.$extenstion;
+            $file->move('uploads/records/', $filename);
+            $user->image = $filename;
+        }
 
         $user->update();
 

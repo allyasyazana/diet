@@ -36,15 +36,37 @@ class MealController extends Controller
      */
     public function store(Request $request)
     {
-        $request->validate([
-            'name' => 'required',
-            'calorie' => 'required',
-        ]);
+        // $request->validate([
+        //     'name' => 'required',
+        //     'calorie' => 'required',
+        // ]);
   
-        Meal::create($request->all());
-   
+        // Meal::create($request->all());
+
+        $meal = new Meal;
+        $meal->name = $request->input('name');
+        $meal->calorie = $request->input('calorie');
+        //$meal->image = $request->input('image');
+
+        if($request->hasfile('image'))
+        {
+            $destination = 'uploads/records/'.$meal->image;
+            if(File::exists($destination))
+            {
+                File::delete($destination);
+            }
+            $file = $request->file('image');
+            $extenstion = $file->getClientOriginalExtension();
+            $filename = time().'.'.$extenstion;
+            $file->move('uploads/records/', $filename);
+            $meal->image = $filename;
+        }
+
+        $meal->save();
+          
         return redirect()->route('meals.index')
                         ->with('success','Meal created successfully.');
+
     }
 
     /**

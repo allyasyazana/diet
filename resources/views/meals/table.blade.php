@@ -38,7 +38,7 @@
         <tr>
             <td>{{ $s->name }}</td>
             <td>{{ $s->calorie }}</td>
-            <td><img src="{{ asset('uploads/' . $s->image) }}" width="75px;" height="75px;" alt="image"></td>
+            <td><img src="{{ asset('uploads/records/' . $s->image) }}" width="75px;" height="75px;" alt="image"></td>
             <td>
                 <form action="{{ route('meals.destroy',$s->id) }}" method="POST">
    

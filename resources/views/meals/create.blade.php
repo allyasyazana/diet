@@ -38,10 +38,10 @@
         </div>
         
         <div class="col-xs-6 col-sm-6 col-md-12">
-        <strong>Image:</strong>
+        <strong>Meal Image:</strong>
             <div class="custom-file">          
-                <input type="file" class="custom-file-input" name="image">       
-                <label class="custom-file-label">Choose image file</label>
+                <input type="file" name="image">       
+                <!-- <label>Choose image file</label> -->
             </div>
         </div>
         <p>
