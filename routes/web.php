@@ -78,6 +78,8 @@ Route::get('/rejected/{id}', 'AppointmentPatientController@rejected');
 
 Route::resource('mealpatients','MealPatientController');
 
+Route::resource('patientcalories','PatientCalorieController');
+
 //Route::get('/patients', 'PatientController@index')->name('patients.index');
 
 //create dietician

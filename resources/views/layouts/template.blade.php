@@ -35,7 +35,7 @@
   </div>
 
   <!-- Navbar -->
-  <nav class="main-header navbar navbar-expand navbar-white navbar-light">
+  <nav class="main-header navbar navbar-expand navbar-white navbar-light" style="background-color:#ABCB70;">
     <!-- Left navbar links -->
     <ul class="navbar-nav">
       <li class="nav-item">
@@ -95,13 +95,32 @@
                   <p>Meal</p>
                 </a>
           </li>  
-          
+
           <li class="nav-item">
-                <a href="{{route('recordmealdieticians.index') }}" class="nav-link">
-                  <i class="fas fa-utensils nav-icon"></i>
-                  <p>Patient's Record Meal</p>
-                </a>
-          </li> 
+            <a href="#" class="nav-link">
+              <i class="nav-icon fas fa-edit"></i>
+              <p>
+                Patient
+                <i class="fas fa-angle-left right"></i>
+              </p>
+            </a>
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+                    <a href="{{route('recordmealdieticians.index') }}" class="nav-link">
+                      <i class="fas fa-utensils nav-icon"></i>
+                      <p>Record Meal</p>
+                    </a>
+              </li> 
+
+              <li class="nav-item">
+                    <a href="{{route('patientcalories.index') }}" class="nav-link">
+                      <i class="fas fa-utensils nav-icon"></i>
+                      <p>Monthly Calories</p>
+                    </a>
+              </li> 
+            </ul>
+          </li>
+
 
           <li class="nav-item">
             <a href="{{ route('logout') }}"
