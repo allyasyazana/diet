@@ -23,14 +23,17 @@
 <!-- <form action="{{ route('meals.store') }}" method="POST" enctype="multipart/form-data"> -->
     @csrf
   
-
+    
         <strong>Patient Name :</strong>
         <td style="width:40%">
           <select class="custom-select" name="user_id" id="user_id">
             <option selected disabled>Select patient name</option>
-              @foreach($users as $id => $name)
-              <option value="{{$id}}" {{ (isset($recordmeal['user_id']) && $recordmeal['user_id'] == $id) ? ' selected' : '' }}>{{$name}}</option>
-              @endforeach
+              <!-- @foreach($users as $id => $name) -->
+              if(is_patient=='1')
+              {
+                <option value="{{$id}}" {{ (isset($patientcalorie['user_id']) && $patientcalorie['user_id'] == $id) ? ' selected' : '' }}>{{$name}}</option>
+              }
+                <!-- @endforeach -->
           </select>
           <p><p>
         </td>

@@ -1,4 +1,4 @@
 @extends('layouts.template')
 @section('content')
-@include(patientcalories.table')
+@include('patientcalories.table')
 @endsection
