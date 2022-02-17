@@ -15,17 +15,17 @@
                 padding-top: 12px;
                 padding-bottom: 12px;
                 text-align: left;
-                background-color: #879B63;
+                background-color:#879B63;"
                 color: white;
                 }
 
-            tr:nth-child(even) {
+            /* tr:nth-child(even) {
                 background-color: #B8CE90;
             }
 
             tr:nth-child(odd) {
                 background-color: #8CDF8D;
-            }
+            } */
         </style>
 
 <form action="{{ route('recordmeals.store') }}" method="POST">
@@ -40,7 +40,7 @@
       
     <table class="table table-responsive" width="100%">
       <tr>
-        <th>Meal Name</th>
+        <th style="background-color:#879B63;">Meal Name</th>
         <th>Quantity</th>
         <th>Total</th>
       </tr>
@@ -66,9 +66,9 @@
 
     <table class="table table-responsive" width="100%">
     <tr>
-     <th>Meal Name</th>
-     <th>Quantity</th>
-     <th>Total</th>
+     <th style="background-color:#C2D2A5;">Meal Name</th>
+     <th style="background-color:#C2D2A5;">Quantity</th>
+     <th style="background-color:#C2D2A5;">Total</th>
    </tr>
       <strong>Brunch :</strong>
       <td style="width:40%">
@@ -93,9 +93,9 @@
 
     <table class="table table-responsive">
     <tr>
-     <th>Meal Name</th>
-     <th>Quantity</th>
-     <th>Total</th>
+     <th style="background-color:#A4AB96;">Meal Name</th>
+     <th style="background-color:#A4AB96;">Quantity</th>
+     <th style="background-color:#A4AB96;">Total</th>
    </tr>
       <strong>Lunch  :</strong>
       <td style="width:40%">
@@ -117,9 +117,9 @@
     
       <table class="table table-responsive" width="100%">
       <tr>
-        <th>Meal Name</th>
-        <th>Quantity</th>
-        <th>Total</th>
+        <th style="background-color:#DAF7A6 ;">Meal Name</th>
+        <th style="background-color:#DAF7A6 ;">Quantity</th>
+        <th style="background-color:#DAF7A6 ;">Total</th>
       </tr>
 
       <strong>Tea :</strong>
