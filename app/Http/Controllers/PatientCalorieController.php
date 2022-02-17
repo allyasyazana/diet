@@ -17,7 +17,7 @@ class PatientCalorieController extends Controller
 
     public function create()
     {
-        $users = User::pluck('name', 'id', 'patientcalories');
+        $users = User::pluck('name', 'id');
         $patientcalories = User::where('is_patient', 1)->get();
 
         return view('patientcalories.create',  compact('users','patientcalories'));

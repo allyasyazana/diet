@@ -56,7 +56,7 @@
         <div class="col-xs-12 col-sm-12 col-md-12 text-center"><p>
                 <p><button type="submit" class="btn btn-primary">Submit</button>
         
-                <a class="btn btn-primary" href="{{ route('meals.index') }}"> Back</a>
+                <a class="btn btn-primary" href="{{ route('patientcalories.index') }}"> Back</a>
         </div>
     </div>
    

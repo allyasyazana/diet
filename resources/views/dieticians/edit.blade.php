@@ -22,7 +22,7 @@
         @method('PUT')
    
     <div class="container">
-    <div class="main-body" style="background-color:#ABCB70;">
+    <div class="main-body">
     
   
           <div class="row gutters-sm">
