@@ -1,0 +1,14 @@
+<?php
+
+namespace App;
+
+use Illuminate\Database\Eloquent\Model;
+
+class Month extends Model
+{
+    public $table="months";
+
+    protected $fillable = [
+        'name',
+    ];
+}

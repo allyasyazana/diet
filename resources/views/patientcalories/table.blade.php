@@ -32,14 +32,14 @@
             
             <th>Patient Name</th>
             <th>Month</th>
-            <th>Calories for this month</th>
+            <th>Total calories for this month</th>
         </tr>
         
         @foreach ($patientcalories as $s)
         <tr>
            
-            <td>{{ $s->user_id}}</td>
-            <td>{{ $s->month}}</td>
+            <td>{{ $s->user->name}}</td>
+            <td>{{ $s->month->name}}</td>
             <td>{{ $s->calorie}}</td>
     
         </tr>

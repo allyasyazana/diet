@@ -20,7 +20,7 @@
     </div>
 @endif
    
-<!-- <form action="{{ route('meals.store') }}" method="POST" enctype="multipart/form-data"> -->
+<form action="{{ route('patientcalories.store') }}" method="POST" enctype="multipart/form-data">
     @csrf
   
     
@@ -28,27 +28,29 @@
         <td style="width:40%">
           <select class="custom-select" name="user_id" id="user_id">
             <option selected disabled>Select patient name</option>
-              <!-- @foreach($users as $id => $name) -->
-              if(is_patient=='1')
+              @foreach($patientcalories as $id => $name)
               {
                 <option value="{{$id}}" {{ (isset($patientcalorie['user_id']) && $patientcalorie['user_id'] == $id) ? ' selected' : '' }}>{{$name}}</option>
               }
-                <!-- @endforeach -->
+                @endforeach
           </select>
           <p><p>
         </td>
 
         <div class="col-xs-6 col-sm-6 col-md-12">
-            <div class="form-group">
-                <strong>Month:</strong>
-                <input type="text" class="form-control" name="month" placeholder="Select Month">
-            </div>
+        <strong>Month  :</strong>
+            <select class="custom-select" name="month_id">
+                <option selected disabled>Select Month</option>
+                @foreach ($months as $id => $name)
+                    <option value="{{$id}}" {{ (isset($patientcalorie['month_id']) && $patientcalorie['month_id'] == $id) ? ' selected' : '' }}>{{$name}}</option>
+                @endforeach
+            </select><p><p> 
         </div>
 
         <div class="col-xs-6 col-sm-6 col-md-12">
             <div class="form-group">
                 <strong>Calories:</strong>
-                <input type="text" class="form-control" name="calorie" placeholder="Insert Calories">
+                <input type="number" class="form-control" name="calorie" placeholder="Insert Calories" min=0>
             </div>
         </div>
         
